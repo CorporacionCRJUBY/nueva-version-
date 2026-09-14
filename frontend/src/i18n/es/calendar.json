@@ -1,0 +1,27 @@
+{
+  "calendar": {
+    "academicYear": "Año Académico",
+    "add": "Agregar",
+    "branch": "Sede",
+    "code": "Código",
+    "confirmDeleteRecord": "¿Eliminar este registro?",
+    "date": "Fecha",
+    "deadline": "Fecha Límite",
+    "description": "Descripción",
+    "edit": "Editar",
+    "event": "Evento",
+    "eventType": "Tipo de Evento",
+    "exam": "Examen",
+    "holiday": "Feriado",
+    "isHoliday": "Es Feriado",
+    "isWorkingDay": "Es Día Laborable",
+    "meeting": "Reunión",
+    "month": "Mes",
+    "noData": "Sin datos",
+    "other": "Otro",
+    "search": "Buscar",
+    "status": "Estado",
+    "title": "Calendario",
+    "year": "Año"
+  }
+}

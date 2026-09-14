@@ -1,0 +1,12 @@
+{
+  "administration": {
+    "title": "Administration",
+    "branches": "Branches",
+    "users": "Users",
+    "roles": "Roles",
+    "permissions": "Permissions",
+    "settings": "Settings",
+    "audit": "Audit Log",
+    "activity": "Activity Log"
+  }
+}

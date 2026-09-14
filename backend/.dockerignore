@@ -1,0 +1,12 @@
+# FILE: backend/.dockerignore
+node_modules
+npm-debug.log
+logs
+uploads
+.env
+.env.*
+!.env.example
+coverage
+.git
+.gitignore
+*.md

@@ -1,0 +1,16 @@
+{
+  "branches": {
+    "add": "Add",
+    "address": "Address",
+    "code": "Code",
+    "confirmDeleteBranch": "Confirm Delete Branch",
+    "edit": "Edit",
+    "email": "Email",
+    "name": "Name",
+    "noData": "No Data",
+    "phone": "Phone",
+    "search": "Search",
+    "status": "Status",
+    "title": "Branches"
+  }
+}

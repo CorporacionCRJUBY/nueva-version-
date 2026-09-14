@@ -1,0 +1,21 @@
+{
+  "previousSchools": {
+    "add": "Agregar",
+    "address": "Dirección",
+    "code": "Código",
+    "confirmDeleteRecord": "¿Eliminar este registro?",
+    "edit": "Editar",
+    "generalInfo": "Información General",
+    "grade": "Grado",
+    "noData": "Sin datos",
+    "notes": "Notas",
+    "phone": "Teléfono",
+    "school": "Escuela",
+    "search": "Buscar",
+    "student": "Estudiante",
+    "title": "Escuelas Anteriores",
+    "transcript": "Expediente",
+    "transcriptReceived": "Expediente Recibido",
+    "year": "Año"
+  }
+}

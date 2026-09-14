@@ -1,0 +1,21 @@
+{
+  "previousSchools": {
+    "add": "Add",
+    "address": "Address",
+    "code": "Code",
+    "confirmDeleteRecord": "Confirm Delete Record",
+    "edit": "Edit",
+    "generalInfo": "General Info",
+    "grade": "Grade",
+    "noData": "No Data",
+    "notes": "Notes",
+    "phone": "Phone",
+    "school": "School",
+    "search": "Search",
+    "student": "Student",
+    "title": "Previous Schools",
+    "transcript": "Transcript",
+    "transcriptReceived": "Transcript Received",
+    "year": "Year"
+  }
+}

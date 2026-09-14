@@ -1,0 +1,27 @@
+{
+  "documents": {
+    "certificate": "Certificate",
+    "code": "Code",
+    "confirmDeleteDocument": "Confirm Delete Document",
+    "consent": "Consent",
+    "edit": "Edit",
+    "fileFormats": "File Formats",
+    "fileName": "File Name",
+    "generalInfo": "General Info",
+    "identification": "Identification",
+    "medical": "Medical",
+    "noData": "No Data",
+    "other": "Other",
+    "search": "Search",
+    "selectFile": "Select File",
+    "size": "Size",
+    "status": "Status",
+    "student": "Student",
+    "title": "Documents",
+    "transcript": "Transcript",
+    "type": "Type",
+    "upload": "Upload",
+    "uploadDate": "Upload Date",
+    "uploading": "Uploading"
+  }
+}

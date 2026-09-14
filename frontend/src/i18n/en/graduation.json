@@ -1,0 +1,20 @@
+{
+  "graduation": {
+    "add": "Add",
+    "certificate": "Certificate",
+    "code": "Code",
+    "confirmDeleteRecord": "Confirm Delete Record",
+    "confirmValidate": "Confirm Validate",
+    "date": "Date",
+    "edit": "Edit",
+    "noData": "No Data",
+    "requirementsMet": "Requirements Met",
+    "search": "Search",
+    "status": "Status",
+    "student": "Student",
+    "title": "Graduation",
+    "validate": "Validate",
+    "validationNotes": "Validation Notes",
+    "year": "Year"
+  }
+}

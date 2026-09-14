@@ -1,0 +1,33 @@
+{
+  "guardians": {
+    "add": "Agregar",
+    "address": "Dirección",
+    "authorizedPickup": "Authorized Pickup",
+    "code": "Código",
+    "confirmDeleteGuardian": "¿Eliminar este tutor?",
+    "edit": "Editar",
+    "email": "Correo Electrónico",
+    "emergency": "Emergencia",
+    "father": "Father",
+    "firstName": "Nombre",
+    "generalInfo": "Información General",
+    "grandfather": "Grandfather",
+    "grandmother": "Grandmother",
+    "identification": "Identificación",
+    "isEmergency": "Es Emergencia",
+    "isPrimary": "Es Primario",
+    "lastName": "Apellido",
+    "mother": "Mother",
+    "noData": "Sin datos",
+    "notes": "Notas",
+    "phone": "Teléfono",
+    "primary": "Primary",
+    "relationship": "Parentesco",
+    "search": "Buscar",
+    "secondaryPhone": "Secondary Teléfono",
+    "status": "Estado",
+    "student": "Estudiante",
+    "title": "Tutores",
+    "tutor": "Tutor"
+  }
+}

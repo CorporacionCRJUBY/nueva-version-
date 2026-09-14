@@ -1,0 +1,28 @@
+{
+  "attendance": {
+    "title": "Asistencia",
+    "add": "Agregar Registro",
+    "edit": "Editar Registro",
+    "search": "Buscar asistencia...",
+    "noData": "No se encontraron registros de asistencia",
+    "code": "Código",
+    "student": "Estudiante",
+    "assignment": "Asignación",
+    "date": "Fecha",
+    "status": "Estado",
+    "present": "Presente",
+    "online": "En línea",
+    "excused": "Justificado",
+    "unexcused": "Injustificado",
+    "checkIn": "Entrada",
+    "checkOut": "Salida",
+    "notes": "Notas",
+    "monthlyGrid": "Cuadrícula Mensual",
+    "monthlyTitle": "Asistencia Mensual de Clase",
+    "grade": "Grado",
+    "rate": "Tasa",
+    "legendTitle": "Leyenda de estados (haga clic en una celda para cambiar):",
+    "saveDaily": "Guardar Asistencia Diaria",
+    "confirmDeleteAttendance": "¿Está seguro de que desea eliminar este registro de asistencia?"
+  }
+}

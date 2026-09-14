@@ -1,0 +1,10 @@
+# FILE: frontend/.dockerignore
+node_modules
+dist
+.env
+.env.*
+!.env.example
+coverage
+.git
+.gitignore
+*.md

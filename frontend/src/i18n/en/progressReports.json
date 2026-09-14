@@ -1,0 +1,22 @@
+{
+  "progressReports": {
+    "add": "Add",
+    "code": "Code",
+    "confirmDeleteReport": "Confirm Delete Report",
+    "date": "Date",
+    "edit": "Edit",
+    "generalInfo": "General Info",
+    "generate": "Generate",
+    "noData": "No Data",
+    "notes": "Notes",
+    "period": "Period",
+    "preview": "Preview",
+    "search": "Search",
+    "status": "Status",
+    "statusHint": "Status Hint",
+    "student": "Student",
+    "title": "Progress Reports",
+    "version": "Version",
+    "year": "Year"
+  }
+}

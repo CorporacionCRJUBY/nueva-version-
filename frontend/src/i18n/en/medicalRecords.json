@@ -1,0 +1,26 @@
+{
+  "medicalRecords": {
+    "add": "Add",
+    "allergies": "Allergies",
+    "allergiesPlaceholder": "Allergies Placeholder",
+    "code": "Code",
+    "condition": "Condition",
+    "conditionPlaceholder": "Condition Placeholder",
+    "confirmDeleteRecord": "Confirm Delete Record",
+    "edit": "Edit",
+    "emergencyContact": "Emergency Contact",
+    "emergencyPhone": "Emergency Phone",
+    "generalInfo": "General Info",
+    "hasAllergy": "Has Allergy",
+    "healthInsurance": "Health Insurance",
+    "insuranceNumber": "Insurance Number",
+    "lastCheckup": "Last Checkup",
+    "medications": "Medications",
+    "medicationsPlaceholder": "Medications Placeholder",
+    "noData": "No Data",
+    "notes": "Notes",
+    "search": "Search",
+    "student": "Student",
+    "title": "Medical Records"
+  }
+}

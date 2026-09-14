@@ -1,0 +1,19 @@
+{
+  "gransif": {
+    "activate": "Activar",
+    "add": "Agregar",
+    "code": "Código",
+    "confirmActivate": "Confirmar Activar",
+    "confirmDeleteRecord": "¿Eliminar este registro?",
+    "date": "Fecha",
+    "edit": "Editar",
+    "noData": "Sin datos",
+    "notes": "Notas",
+    "score": "Score",
+    "search": "Buscar",
+    "status": "Estado",
+    "student": "Estudiante",
+    "title": "GRANSIF",
+    "year": "Año"
+  }
+}

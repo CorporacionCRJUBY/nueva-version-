@@ -1,0 +1,18 @@
+{
+  "audit": {
+    "action": "Acción",
+    "after": "After",
+    "before": "Before",
+    "date": "Fecha",
+    "details": "Detalles",
+    "ip": "IP",
+    "module": "Módulo",
+    "noData": "Sin datos",
+    "notFound": "No Encontrado",
+    "reason": "Motivo",
+    "record": "Registro",
+    "search": "Buscar",
+    "title": "Auditoría",
+    "user": "Usuario"
+  }
+}

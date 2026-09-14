@@ -1,0 +1,27 @@
+{
+  "documents": {
+    "certificate": "Certificado",
+    "code": "Código",
+    "confirmDeleteDocument": "¿Eliminar este documento?",
+    "consent": "Consentimiento",
+    "edit": "Editar",
+    "fileFormats": "Formatos de Archivo",
+    "fileName": "Nombre de Archivo",
+    "generalInfo": "Información General",
+    "identification": "Identificación",
+    "medical": "Médico",
+    "noData": "Sin datos",
+    "other": "Otro",
+    "search": "Buscar",
+    "selectFile": "Seleccionar Archivo",
+    "size": "Tamaño",
+    "status": "Estado",
+    "student": "Estudiante",
+    "title": "Documentos",
+    "transcript": "Expediente Académico",
+    "type": "Tipo",
+    "upload": "Subir",
+    "uploadDate": "Fecha de Subida",
+    "uploading": "Subiendo..."
+  }
+}

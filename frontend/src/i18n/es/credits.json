@@ -1,0 +1,25 @@
+{
+  "credits": {
+    "academic": "Académico",
+    "add": "Agregar",
+    "code": "Código",
+    "community": "Community",
+    "confirmDeleteCredit": "¿Eliminar este crédito?",
+    "confirmRecalculate": "Confirmar Recalcular",
+    "earned": "Earned",
+    "edit": "Editar",
+    "elective": "Elective",
+    "generalInfo": "Información General",
+    "noData": "Sin datos",
+    "notes": "Notas",
+    "period": "Período",
+    "recalculate": "Recalcular",
+    "required": "Requerido",
+    "search": "Buscar",
+    "social": "Social",
+    "status": "Estado",
+    "student": "Estudiante",
+    "title": "Créditos",
+    "type": "Tipo"
+  }
+}

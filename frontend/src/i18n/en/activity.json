@@ -1,0 +1,15 @@
+{
+  "activity": {
+    "action": "Action",
+    "date": "Date",
+    "details": "Details",
+    "ip": "IP",
+    "module": "Module",
+    "noData": "No Data",
+    "notFound": "Not Found",
+    "record": "Record",
+    "search": "Search",
+    "title": "Activity",
+    "user": "User"
+  }
+}

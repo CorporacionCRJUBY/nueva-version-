@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "action": "Action",
+    "add": "Add",
+    "approve": "Approve",
+    "code": "Code",
+    "confirmDeletePermission": "Confirm Delete Permission",
+    "create": "Create",
+    "delete": "Delete",
+    "description": "Description",
+    "edit": "Edit",
+    "generate": "Generate",
+    "module": "Module",
+    "noData": "No Data",
+    "reject": "Reject",
+    "search": "Search",
+    "title": "Permissions",
+    "view": "View"
+  }
+}

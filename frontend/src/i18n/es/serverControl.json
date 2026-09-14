@@ -1,0 +1,20 @@
+{
+  "serverControl": {
+    "title": "Panel de Control del Servidor",
+    "subtitle": "Monitorea y gestiona la infraestructura del sistema",
+    "cpu": "Uso de CPU",
+    "memory": "Memoria",
+    "disk": "Disco",
+    "uptime": "Tiempo Activo",
+    "services": "Servicios",
+    "service": "Servicio",
+    "status": "Estado",
+    "actions": "Acciones",
+    "running": "En Ejecución",
+    "down": "Caído",
+    "restart": "Reiniciar",
+    "logs": "Logs de la Aplicación",
+    "lastUpdated": "Última actualización",
+    "restarting": "Reiniciando..."
+  }
+}

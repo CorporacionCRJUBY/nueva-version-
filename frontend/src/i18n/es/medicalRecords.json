@@ -1,0 +1,26 @@
+{
+  "medicalRecords": {
+    "add": "Agregar",
+    "allergies": "Alergias",
+    "allergiesPlaceholder": "Ej.: maní, penicilina",
+    "code": "Código",
+    "condition": "Condición",
+    "conditionPlaceholder": "Describe la condición médica",
+    "confirmDeleteRecord": "¿Eliminar este registro?",
+    "edit": "Editar",
+    "emergencyContact": "Contacto de Emergencia",
+    "emergencyPhone": "Teléfono de Emergencia",
+    "generalInfo": "Información General",
+    "hasAllergy": "¿Tiene Alergias?",
+    "healthInsurance": "Seguro de Salud",
+    "insuranceNumber": "Número de Seguro",
+    "lastCheckup": "Último Chequeo",
+    "medications": "Medicamentos",
+    "medicationsPlaceholder": "Ej.: ibuprofeno 400 mg",
+    "noData": "Sin datos",
+    "notes": "Notas",
+    "search": "Buscar",
+    "student": "Estudiante",
+    "title": "Expedientes Médicos"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "attendance": {
+    "title": "Attendance",
+    "add": "Add Record",
+    "edit": "Edit Record",
+    "search": "Search attendance...",
+    "noData": "No attendance records found",
+    "code": "Code",
+    "student": "Student",
+    "assignment": "Assignment",
+    "date": "Date",
+    "status": "Status",
+    "present": "Present",
+    "online": "Online",
+    "excused": "Excused",
+    "unexcused": "Unexcused",
+    "checkIn": "Check In",
+    "checkOut": "Check Out",
+    "notes": "Notes",
+    "monthlyGrid": "Monthly Grid",
+    "monthlyTitle": "Monthly Class Attendance",
+    "grade": "Grade",
+    "rate": "Rate",
+    "legendTitle": "Status Legend (Click cell to change):",
+    "saveDaily": "Save Daily Attendance",
+    "confirmDeleteAttendance": "Are you sure you want to delete this attendance record?"
+  }
+}

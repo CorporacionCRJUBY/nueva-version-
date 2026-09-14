@@ -1,0 +1,24 @@
+{
+  "status": {
+    "active": "Activo",
+    "approved": "Aprobado",
+    "archived": "Archivado",
+    "closed": "Cerrado",
+    "completed": "Completado",
+    "draft": "Borrador",
+    "graduated": "Graduado",
+    "inactive": "Inactivo",
+    "locked": "Bloqueado",
+    "official": "Oficial",
+    "open": "Abierto",
+    "pending": "Pendiente",
+    "published": "Publicado",
+    "rejected": "Rechazado",
+    "reprinted": "Reimpreso",
+    "suspended": "Suspendido",
+    "transferred": "Transferido",
+    "unlocked": "Desbloqueado",
+    "validated": "Validado",
+    "withdrawn": "Retirado"
+  }
+}

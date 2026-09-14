@@ -1,0 +1,21 @@
+{
+  "academicHistory": {
+    "add": "Agregar",
+    "code": "Código",
+    "confirmDeleteRecord": "¿Eliminar este registro?",
+    "date": "Fecha",
+    "edit": "Editar",
+    "grade": "Grado",
+    "letter": "Letra",
+    "lockedHint": "Registro bloqueado — no se puede editar",
+    "noData": "Sin datos",
+    "notes": "Notas",
+    "period": "Período",
+    "search": "Buscar",
+    "status": "Estado",
+    "student": "Estudiante",
+    "subject": "Materia",
+    "title": "Historial Académico",
+    "year": "Año"
+  }
+}

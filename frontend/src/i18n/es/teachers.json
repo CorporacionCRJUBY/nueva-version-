@@ -1,0 +1,33 @@
+{
+  "teachers": {
+    "academicYear": "Año Académico",
+    "add": "Agregar",
+    "additionalInfo": "Información Adicional",
+    "assignments": "Asignaciones",
+    "branch": "Sede",
+    "code": "Código",
+    "confirmDeleteTeacher": "¿Eliminar este profesor?",
+    "contactInfo": "Información de Contacto",
+    "edit": "Editar",
+    "email": "Correo Electrónico",
+    "employmentInfo": "Información Laboral",
+    "firstName": "Nombre",
+    "grade": "Grado",
+    "hireDate": "Fecha de Contratación",
+    "lastName": "Apellido",
+    "name": "Nombre",
+    "noAssignments": "Sin asignaciones",
+    "noData": "Sin datos",
+    "notFound": "No Encontrado",
+    "notes": "Notas",
+    "personalInfo": "Información Personal",
+    "phone": "Teléfono",
+    "schedule": "Horario",
+    "search": "Buscar",
+    "section": "Sección",
+    "specialization": "Especialidad",
+    "status": "Estado",
+    "subject": "Materia",
+    "title": "Profesores"
+  }
+}

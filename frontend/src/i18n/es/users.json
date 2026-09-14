@@ -1,0 +1,31 @@
+{
+  "users": {
+    "add": "Agregar",
+    "assignRoles": "Asignar Roles",
+    "availableRoles": "Roles Disponibles",
+    "branch": "Sede",
+    "cannotEditOwnRoles": "No Puede Editar Sus Propios Roles",
+    "changePassword": "Cambiar Contraseña",
+    "code": "Código",
+    "confirmDeleteUser": "¿Eliminar este usuario?",
+    "confirmPassword": "Confirmar Contraseña",
+    "edit": "Editar",
+    "email": "Correo Electrónico",
+    "fullName": "Nombre Completo",
+    "generalInfo": "Información General",
+    "lastLogin": "Último Iniciar Sesión",
+    "leaveBlankToKeep": "Leave Blank To Keep",
+    "newPassword": "Nueva Contraseña",
+    "currentPassword": "Contraseña Actual",
+    "noData": "Sin datos",
+    "noRolesAssigned": "Sin Roles Asignados",
+    "password": "Contraseña",
+    "passwordMismatch": "Las contraseñas no coinciden",
+    "passwordSection": "Contraseña Sección",
+    "phone": "Teléfono",
+    "role": "Rol",
+    "search": "Buscar",
+    "status": "Estado",
+    "title": "Usuarios"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "branches": {
+    "add": "Agregar",
+    "address": "Dirección",
+    "code": "Código",
+    "confirmDeleteBranch": "¿Eliminar esta sede?",
+    "edit": "Editar",
+    "email": "Correo Electrónico",
+    "name": "Nombre",
+    "noData": "Sin datos",
+    "phone": "Teléfono",
+    "search": "Buscar",
+    "status": "Estado",
+    "title": "Sedes"
+  }
+}

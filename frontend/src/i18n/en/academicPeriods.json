@@ -1,0 +1,21 @@
+{
+  "academicPeriods": {
+    "academicYear": "Academic Year",
+    "add": "Add",
+    "close": "Close",
+    "code": "Code",
+    "confirmClose": "Confirm Close",
+    "confirmLock": "Confirm Lock",
+    "edit": "Edit",
+    "endDate": "End Date",
+    "lock": "Lock",
+    "lockedNotice": "Locked Notice",
+    "name": "Name",
+    "noData": "No Data",
+    "search": "Search",
+    "startDate": "Start Date",
+    "status": "Status",
+    "title": "Academic Periods",
+    "year": "Year"
+  }
+}

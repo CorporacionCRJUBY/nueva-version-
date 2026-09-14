@@ -1,0 +1,101 @@
+# FILE: docker-compose.yml
+# Stack ACADEMIX 2.0 sobre un MySQL NATIVO.
+#
+# ⚠️ LA BASE DE DATOS NO SE DESPLIEGA AQUÍ.
+#    El proyecto usa el servidor MySQL/MariaDB instalado en la MÁQUINA
+#    ANFITRIONA (servicio `mysql` / `mariadb`), no un contenedor. Por eso este
+#    archivo levanta únicamente dos servicios:
+#        · backend   -> API Express (Node 20)
+#        · frontend  -> build de Vite servido por nginx (proxy /api -> backend)
+#
+#    El backend alcanza el MySQL del host por `host.docker.internal`, resuelto
+#    con el bloque `extra_hosts` (en Linux vía host-gateway; en Docker Desktop
+#    ya viene resuelto).
+#
+# USO:
+#   1. MySQL/MariaDB NATIVO instalado y arrancado, con la BD y el usuario
+#      creados:      sudo mysql < database/init/01-init.sql
+#   2. Secretos:     bash scripts/init-secrets.sh --demo
+#   3. Levantar:     docker compose up --build -d
+#   4. Comprobar:    http://localhost:8080
+#                    http://localhost:8080/health/ready   (db: up)
+#
+# SEGURIDAD: ninguna contraseña vive en este archivo; se leen del entorno
+# (o del `.env` gitignored junto a este docker-compose.yml).
+
+name: academix
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: academix-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    environment:
+      NODE_ENV: production
+      # MySQL NATIVO del anfitrión (no hay servicio `db` en este compose).
+      DB_HOST: ${DB_HOST:-host.docker.internal}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_USER: ${DB_USER:-ADMIN}
+      DB_PASSWORD: ${DB_PASSWORD:?Definir DB_PASSWORD en el entorno (usuario de la BD nativa)}
+      DB_NAME: ${DB_NAME:-academix_v2}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:8080}
+      # El backend vive detrás de nginx (un solo salto). Sin esto, Express
+      # tomaría la IP del contenedor de nginx como origen de TODAS las
+      # peticiones y los límites de peticiones se aplicarían al proxy en vez
+      # de a cada cliente real.
+      TRUST_PROXY: '1'
+      RUN_MIGRATIONS: '1'
+      RUN_SEEDS: '1'
+      # El stack sirve nginx por HTTP: con `true` el navegador descartaría la
+      # cookie de sesión. En un despliegue con HTTPS debe ser 'true'.
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      # SEGURIDAD: las cuentas del seed son de DEMO con contraseña conocida, por
+      # eso `database/seeds/03_users.seed.js` las bloquea cuando
+      # NODE_ENV=production. Un entorno de demostración puede habilitarlas
+      # explícitamente aquí; en un despliegue real debe quedar en 'false'.
+      SEED_ALLOW_IN_PRODUCTION: ${SEED_ALLOW_IN_PRODUCTION:-false}
+    extra_hosts:
+      # Necesario en Linux para que `host.docker.internal` apunte al anfitrión
+      # (Docker Desktop para macOS/Windows ya lo resuelve por su cuenta).
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '5000:5000'
+    volumes:
+      - uploads_data:/app/uploads
+      - seed_data:/data
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:5000/health/ready']
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks:
+      - academix-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: /api
+    container_name: academix-frontend
+    restart: unless-stopped
+    ports:
+      - '8080:80'
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - academix-net
+
+volumes:
+  uploads_data:
+  seed_data:
+
+networks:
+  academix-net:
+    driver: bridge

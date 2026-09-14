@@ -1,0 +1,21 @@
+{
+  "academicHistory": {
+    "add": "Add",
+    "code": "Code",
+    "confirmDeleteRecord": "Confirm Delete Record",
+    "date": "Date",
+    "edit": "Edit",
+    "grade": "Grade",
+    "letter": "Letter",
+    "lockedHint": "Locked Hint",
+    "noData": "No Data",
+    "notes": "Notes",
+    "period": "Period",
+    "search": "Search",
+    "status": "Status",
+    "student": "Student",
+    "subject": "Subject",
+    "title": "Academic History",
+    "year": "Year"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "guardians": {
+    "add": "Add",
+    "address": "Address",
+    "authorizedPickup": "Authorized Pickup",
+    "code": "Code",
+    "confirmDeleteGuardian": "Confirm Delete Guardian",
+    "edit": "Edit",
+    "email": "Email",
+    "emergency": "Emergency",
+    "father": "Father",
+    "firstName": "First Name",
+    "generalInfo": "General Info",
+    "grandfather": "Grandfather",
+    "grandmother": "Grandmother",
+    "identification": "Identification",
+    "isEmergency": "Is Emergency",
+    "isPrimary": "Is Primary",
+    "lastName": "Last Name",
+    "mother": "Mother",
+    "noData": "No Data",
+    "notes": "Notes",
+    "phone": "Phone",
+    "primary": "Primary",
+    "relationship": "Relationship",
+    "search": "Search",
+    "secondaryPhone": "Secondary Phone",
+    "status": "Status",
+    "student": "Student",
+    "title": "Guardians",
+    "tutor": "Tutor"
+  }
+}

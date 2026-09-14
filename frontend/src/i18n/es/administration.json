@@ -1,0 +1,12 @@
+{
+  "administration": {
+    "title": "Administración",
+    "branches": "Sucursales",
+    "users": "Usuarios",
+    "roles": "Roles",
+    "permissions": "Permisos",
+    "settings": "Configuración",
+    "audit": "Registro de Auditoría",
+    "activity": "Registro de Actividad"
+  }
+}

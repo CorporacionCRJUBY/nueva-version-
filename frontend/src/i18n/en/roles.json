@@ -1,0 +1,17 @@
+{
+  "roles": {
+    "add": "Add",
+    "assignPermissions": "Assign Permissions",
+    "availablePermissions": "Available Permissions",
+    "code": "Code",
+    "description": "Description",
+    "edit": "Edit",
+    "name": "Name",
+    "noData": "No Data",
+    "permissions": "Permissions",
+    "search": "Search",
+    "status": "Status",
+    "superAdminAlwaysFullAccess": "Super Admin Always Full Access",
+    "title": "Roles"
+  }
+}

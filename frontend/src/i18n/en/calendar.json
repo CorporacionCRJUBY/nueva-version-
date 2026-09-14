@@ -1,0 +1,27 @@
+{
+  "calendar": {
+    "academicYear": "Academic Year",
+    "add": "Add",
+    "branch": "Branch",
+    "code": "Code",
+    "confirmDeleteRecord": "Confirm Delete Record",
+    "date": "Date",
+    "deadline": "Deadline",
+    "description": "Description",
+    "edit": "Edit",
+    "event": "Event",
+    "eventType": "Event Type",
+    "exam": "Exam",
+    "holiday": "Holiday",
+    "isHoliday": "Is Holiday",
+    "isWorkingDay": "Is Working Day",
+    "meeting": "Meeting",
+    "month": "Month",
+    "noData": "No Data",
+    "other": "Other",
+    "search": "Search",
+    "status": "Status",
+    "title": "Calendar",
+    "year": "Year"
+  }
+}

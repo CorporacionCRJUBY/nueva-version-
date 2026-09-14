@@ -1,0 +1,113 @@
+=============================================================================
+ ACADEMIX 2.0 — QA DE API (end-to-end contra backend real)
+ Base URL: http://localhost:5000
+ Fecha: 2026-09-10 18:14:46 UTC
+ Entorno: Node v20.20.2 · mariadb  Ver 15.1 Distrib 10.11.18-Maria
+=============================================================================
+
+1. SALUD DEL SERVICIO (liveness / readiness)
+  [PASS] GET /health/live -> 200
+  [PASS] Liveness reporta status=ok
+  [PASS] GET /health/ready -> 200
+  [PASS] Readiness confirma base de datos 'up'
+
+2. AUTENTICACIÓN (cookies httpOnly)
+  [PASS] Login con credenciales inválidas -> 401
+  [PASS] Login correcto (admin@academix.com)
+  [PASS] El token de acceso se entrega como cookie httpOnly
+  [PASS] La cookie es HttpOnly (inmune a robo por XSS)
+  [PASS] El body no expone tokens (solo datos de perfil)
+  [PASS] GET /api/auth/me con sesión -> 200
+  [PASS] /api/auth/me devuelve el usuario autenticado
+  [PASS] GET /api/auth/me sin cookie -> 401
+  [PASS] GET /api/auth/me con cookie inválida -> 401
+  [PASS] JWT con firma manipulada -> 401
+
+3. RBAC — CONTROL DE ACCESO BASADO EN ROLES
+  [PASS] ADMIN lista roles (/api/roles) -> 200
+  [PASS] ADMIN lista permisos (/api/permissions) -> 200
+  [PASS] ADMIN lista usuarios (/api/users) -> 200
+  [PASS] ADMIN ve configuración (/api/settings) -> 200
+  [PASS] ADMIN ve auditoría (/api/audit) -> 200
+  [PASS] ADMIN ve métricas del servidor (/api/system/metrics) -> 200
+  [PASS] Login de docente correcto (maria.gonzalez@academix.com)
+  [PASS] Docente bloqueado en /api/users (403)
+  [PASS] Docente bloqueado en /api/roles (403)
+  [PASS] Docente bloqueado en /api/permissions (403)
+  [PASS] Docente accede a /api/students -> 200
+
+4. CRUD — MÓDULOS ACADÉMICOS (lectura vía API)
+  [PASS] GET /api/users -> 200
+  [PASS] GET /api/students -> 200
+  [PASS] GET /api/teachers -> 200
+  [PASS] GET /api/subjects -> 200
+  [PASS] GET /api/assignments -> 200
+  [PASS] GET /api/attendance -> 200
+  [PASS] GET /api/grades -> 200
+  [PASS] GET /api/grade-change-requests -> 200
+  [PASS] GET /api/gpa -> 200
+  [PASS] GET /api/credits -> 200
+  [PASS] GET /api/scholarships -> 200
+  [PASS] GET /api/guardians -> 200
+  [PASS] GET /api/branches -> 200
+  [PASS] GET /api/academic-years -> 200
+  [PASS] GET /api/academic-periods -> 200
+  [PASS] GET /api/academic-history -> 200
+  [PASS] GET /api/medical-records -> 200
+  [PASS] GET /api/previous-schools -> 200
+  [PASS] GET /api/documents -> 200
+  [PASS] GET /api/calendar -> 200
+  [PASS] GET /api/graduation -> 200
+  [PASS] GET /api/gransif -> 200
+  [PASS] GET /api/progress-reports -> 200
+  [PASS] GET /api/report-cards -> 200
+  [PASS] GET /api/transcripts -> 200
+  [PASS] GET /api/reports -> 200
+  [PASS] GET /api/audit -> 200
+  [PASS] GET /api/activity -> 200
+  [PASS] GET /api/roles -> 200
+  [PASS] GET /api/permissions -> 200
+  [PASS] GET /api/settings -> 200
+
+5. MÓDULO DE SISTEMA (panel de control del servidor)
+  [PASS] GET /api/system/metrics -> 200
+  [PASS] Métricas incluyen 'cpu'
+  [PASS] Métricas incluyen 'memory'
+  [PASS] Métricas incluyen 'disk'
+  [PASS] Métricas incluyen 'uptime'
+  [PASS] GET /api/system/services -> 200
+
+6. VALIDACIÓN DE DATOS Y MANEJO DE ERRORES
+  [PASS] POST /api/students sin body -> 400/422 (validación)
+  [PASS] POST /api/students con email inválido -> 400/422
+  [PASS] GET ruta inexistente -> 404
+  [PASS] GET /api/students/<uuid inexistente> -> 404 (no 500)
+  [PASS] El error responde en JSON estructurado
+
+7. SEGURIDAD
+  [PASS] Cabecera X-Content-Type-Options presente
+  [PASS] Protección anti-clickjacking (X-Frame-Options/CSP)
+  [PASS] No expone X-Powered-By
+  [PASS] HSTS presente
+  [PASS] Búsqueda con payload SQL no provoca error -> 200
+  [PASS] Búsqueda con payload SQL (UNION) -> 200
+  [INFO] Sin cabecera CORS para este origen
+
+8. REFRESCO DE SESIÓN
+  [PASS] POST /api/auth/refresh con cookie -> 200
+  [PASS] POST /api/auth/refresh sin cookie -> 401
+
+9. INTERNACIONALIZACIÓN (EN/ES)
+  [PASS] Petición con Accept-Language: en-US -> 200
+  [PASS] Petición con Accept-Language: es-ES -> 200
+
+10. RATE LIMITING (se ejecuta al final: bloquea la IP temporalmente)
+  [PASS] Rate limiting activo en /api/auth/login (429 en el intento 10)
+
+11. CIERRE DE SESIÓN
+  [PASS] POST /api/auth/logout -> 200
+
+=============================================================================
+ RESULTADO:  79 PASS  ·  0 FAIL  ·  79 comprobaciones
+ Reporte: /workspace/academix_v5/qa/api-qa-results.txt
+=============================================================================

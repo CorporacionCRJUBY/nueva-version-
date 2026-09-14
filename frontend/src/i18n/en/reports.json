@@ -1,0 +1,27 @@
+{
+  "reports": {
+    "title": "Reports",
+    "search": "Search reports...",
+    "noData": "No reports found",
+    "code": "Code",
+    "category": "Category",
+    "student": "Student",
+    "date": "Date",
+    "status": "Status",
+    "version": "Version",
+    "details": "Report Details",
+    "preview": "Preview PDF",
+    "generate": "Generate Report",
+    "viewPdf": "View PDF",
+    "notes": "Notes",
+    "notFound": "Report not found",
+    "attendance": "Attendance Report",
+    "grades": "Grades Report",
+    "progressReports": "Progress Report",
+    "reportCards": "Report Card",
+    "academicHistory": "Academic History",
+    "transcripts": "Transcript",
+    "scholarships": "Scholarships",
+    "graduation": "Graduation"
+  }
+}

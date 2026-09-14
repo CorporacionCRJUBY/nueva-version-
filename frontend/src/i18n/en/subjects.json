@@ -1,0 +1,20 @@
+{
+  "subjects": {
+    "academicInfo": "Academic Info",
+    "add": "Add",
+    "branch": "Branch",
+    "code": "Code",
+    "confirmDeleteSubject": "Confirm Delete Subject",
+    "credits": "Credits",
+    "description": "Description",
+    "edit": "Edit",
+    "generalInfo": "General Info",
+    "grade": "Grade",
+    "hours": "Hours",
+    "name": "Name",
+    "noData": "No Data",
+    "search": "Search",
+    "status": "Status",
+    "title": "Subjects"
+  }
+}

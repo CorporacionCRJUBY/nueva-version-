@@ -1,0 +1,21 @@
+{
+  "assignments": {
+    "academicInfo": "Información Académica",
+    "academicYear": "Año Académico",
+    "add": "Agregar",
+    "branch": "Sede",
+    "code": "Código",
+    "confirmDeleteAssignment": "Confirmar Eliminar Assignment",
+    "edit": "Editar",
+    "generalInfo": "Información General",
+    "grade": "Grado",
+    "noData": "Sin datos",
+    "schedule": "Horario",
+    "search": "Buscar",
+    "section": "Sección",
+    "status": "Estado",
+    "subject": "Materia",
+    "teacher": "Profesor",
+    "title": "Asignaciones"
+  }
+}

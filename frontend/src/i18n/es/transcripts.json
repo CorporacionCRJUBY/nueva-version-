@@ -1,0 +1,27 @@
+{
+  "transcripts": {
+    "add": "Agregar",
+    "code": "Código",
+    "confirmDeleteReport": "Confirmar Eliminar Reporte",
+    "confirmReprint": "Confirmar Reimprimir",
+    "created": "Created",
+    "edit": "Editar",
+    "generalInfo": "Información General",
+    "generate": "Generar",
+    "noData": "Sin datos",
+    "notes": "Notas",
+    "official": "Oficial",
+    "period": "Período",
+    "preview": "Vista Previa",
+    "reprint": "Reimprimir",
+    "search": "Buscar",
+    "status": "Estado",
+    "statusHint": "Estado Hint",
+    "student": "Estudiante",
+    "title": "Expedientes Académicos",
+    "type": "Tipo",
+    "unofficial": "No Oficial",
+    "version": "Versión",
+    "year": "Año"
+  }
+}

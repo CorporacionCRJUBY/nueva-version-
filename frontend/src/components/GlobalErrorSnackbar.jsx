@@ -53,7 +53,7 @@ const GlobalErrorSnackbar = () => {
         type="button"
         onClick={() => setOpen(false)}
         aria-label="Cerrar"
-        className="ml-2 rounded p-0.5 transition-colors hover:bg-white/20"
+        className="ml-2 rounded-md p-0.5 transition-colors hover:bg-white/20"
       >
         <X className="h-4 w-4" />
       </button>

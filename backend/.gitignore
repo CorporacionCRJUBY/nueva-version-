@@ -1,0 +1,13 @@
+# Backend — ACADEMIX 2.0
+node_modules/
+.env
+.env.*
+!.env.example
+!*.env.example
+coverage/
+logs/
+*.log
+dist/
+build/
+uploads/
+!uploads/.gitkeep

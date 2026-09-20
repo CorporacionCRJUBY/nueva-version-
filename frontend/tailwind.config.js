@@ -138,27 +138,37 @@ export default {
         lg: '12px',
         xl: '16px',
         '2xl': '20px',
+        '3xl': '24px',
         full: '9999px',
       },
       boxShadow: {
-        xs: '0 1px 2px rgba(30, 27, 75, 0.05)',
-        sm: '0 1px 2px rgba(30, 27, 75, 0.05)',
-        md: '0 4px 12px rgba(30, 27, 75, 0.08), 0 1px 3px rgba(30, 27, 75, 0.04)',
-        lg: '0 12px 32px rgba(30, 27, 75, 0.12), 0 2px 8px rgba(30, 27, 75, 0.06)',
-        xl: '0 24px 60px rgba(30, 27, 75, 0.18)',
-        brand: '0 4px 14px rgba(124, 58, 237, 0.28)',
-        'brand-lg': '0 10px 30px rgba(124, 58, 237, 0.32)',
+        // Escala refinada estilo Figma: sombras suaves, multicapa y de bajo
+        // contraste, con tinte violeta en vez de negro puro para que se
+        // integren con el lienzo lavanda.
+        xs: '0 1px 2px rgba(30, 27, 75, 0.04)',
+        sm: '0 1px 3px rgba(30, 27, 75, 0.06), 0 1px 2px rgba(30, 27, 75, 0.04)',
+        md: '0 4px 16px rgba(30, 27, 75, 0.07), 0 2px 6px rgba(30, 27, 75, 0.04)',
+        lg: '0 12px 36px rgba(30, 27, 75, 0.10), 0 4px 12px rgba(30, 27, 75, 0.05)',
+        xl: '0 24px 64px rgba(30, 27, 75, 0.16), 0 8px 20px rgba(30, 27, 75, 0.07)',
+        '2xl': '0 32px 80px rgba(30, 27, 75, 0.20)',
+        brand: '0 4px 16px rgba(124, 58, 237, 0.26)',
+        'brand-lg': '0 12px 34px rgba(124, 58, 237, 0.32)',
+        'brand-glow': '0 0 0 4px rgba(124, 58, 237, 0.12)',
         inset: 'inset 0 1px 0 rgba(255,255,255,0.06)',
+        'inset-line': 'inset 0 0 0 1px rgba(124, 58, 237, 0.08)',
         none: 'none',
       },
       backgroundImage: {
         'brand-gradient': 'linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%)',
         'brand-gradient-h': 'linear-gradient(90deg, #6d28d9 0%, #8b5cf6 100%)',
+        'brand-gradient-soft': 'linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%)',
         'accent-gradient': 'linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%)',
         // Panel del login de la referencia: #2d1b69 -> #4c1d95 -> #6d28d9
         'hero-gradient': 'linear-gradient(145deg, #2d1b69 0%, #4c1d95 50%, #6d28d9 100%)',
         // Sidebar de la referencia: #1e1b4b -> #2d1b69
         'sidebar-gradient': 'linear-gradient(180deg, #1e1b4b 0%, #2d1b69 100%)',
+        'sidebar-gradient-rich':
+          'radial-gradient(120% 80% at 0% 0%, rgba(124,58,237,0.35) 0%, transparent 55%), linear-gradient(180deg, #1e1b4b 0%, #2d1b69 100%)',
         'card-shine': 'linear-gradient(135deg, rgba(124,58,237,0.04) 0%, rgba(167,139,250,0.02) 50%, transparent 100%)',
         'grid-pattern':
           'linear-gradient(rgba(124,58,237,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.07) 1px, transparent 1px)',

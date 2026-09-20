@@ -316,12 +316,12 @@ const MainLayout = () => {
   return (
     <div className="flex min-h-screen">
       {/* ===================== Barra superior ===================== */}
-      <header className="no-print fixed inset-x-0 top-0 z-appbar flex h-16 items-center gap-3 border-b border-line bg-white/95 px-4 backdrop-blur-md">
+      <header className="no-print fixed inset-x-0 top-0 z-appbar flex h-16 items-center gap-3 border-b border-line bg-white/85 px-4 shadow-xs backdrop-blur-xl">
         <button
           type="button"
           onClick={() => setDrawerOpen((v) => !v)}
           aria-label="Toggle navigation"
-          className="rounded p-2 text-ink-soft transition-colors hover:bg-hover hover:text-ink"
+          className="rounded-lg p-2 text-ink-soft transition-colors hover:bg-hover hover:text-ink"
         >
           <MenuIcon className="h-5 w-5" />
         </button>
@@ -331,7 +331,7 @@ const MainLayout = () => {
         <button
           type="button"
           onClick={() => navigate('/dashboard')}
-          className="shrink-0 rounded p-0.5"
+          className="shrink-0 rounded-md p-0.5"
         >
           <Logo withGlow text="NEW DIRECTION ACADEMY" fontSize="0.95rem" />
         </button>
@@ -361,13 +361,13 @@ const MainLayout = () => {
               aria-label={t('common.quickSearch') || 'Quick search'}
               className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-ink-muted"
             />
-            <kbd className="hidden shrink-0 rounded bg-surface-3 px-1.5 py-0.5 font-mono text-2xs font-medium text-ink-muted lg:block">
+            <kbd className="hidden shrink-0 rounded-md bg-surface-3 px-1.5 py-0.5 font-mono text-2xs font-medium text-ink-muted lg:block">
               ⌘K
             </kbd>
           </div>
 
           {quickOpen && quickQuery.trim() && (
-            <div className="absolute left-0 right-0 top-full z-modal mt-2 animate-scale-in overflow-hidden rounded-lg border border-line bg-surface py-1 shadow-lg">
+            <div className="absolute left-0 right-0 top-full z-modal mt-2 animate-scale-in overflow-hidden rounded-xl border border-line bg-surface py-1 shadow-lg">
               {quickResults.length === 0 ? (
                 <p className="px-4 py-3 text-sm text-ink-muted">
                   {t('common.noResults') || 'No results'}
@@ -403,12 +403,12 @@ const MainLayout = () => {
             onClick={() => setLangMenuOpen((v) => !v)}
             title={t('common.language')}
             aria-label={t('common.language')}
-            className="rounded p-2 text-ink-soft transition-colors hover:bg-hover hover:text-ink"
+            className="focus-ring rounded-lg p-2 text-ink-soft transition-colors hover:bg-hover hover:text-ink"
           >
             <Languages className="h-5 w-5" />
           </button>
           {langMenuOpen && (
-            <div className="absolute right-0 mt-2 min-w-[10rem] animate-scale-in overflow-hidden rounded-lg border border-line bg-surface py-1 shadow-lg">
+            <div className="absolute right-0 mt-2 min-w-[10rem] animate-scale-in overflow-hidden rounded-xl border border-line bg-surface py-1 shadow-lg">
               {supportedLanguages.map((lang) => (
                 <button
                   key={lang.code}
@@ -429,7 +429,7 @@ const MainLayout = () => {
         {/* Notificaciones */}
         <button
           type="button"
-          className="relative rounded p-2 text-ink-soft transition-colors hover:bg-hover hover:text-ink"
+          className="focus-ring relative rounded-lg p-2 text-ink-soft transition-colors hover:bg-hover hover:text-ink"
           aria-label="Notifications"
         >
           <Bell className="h-5 w-5" />
@@ -454,7 +454,7 @@ const MainLayout = () => {
             </span>
           </button>
           {userMenuOpen && (
-            <div className="absolute right-0 mt-2 min-w-[13rem] animate-scale-in overflow-hidden rounded-lg border border-line bg-surface py-1 shadow-lg">
+            <div className="absolute right-0 mt-2 min-w-[13rem] animate-scale-in overflow-hidden rounded-xl border border-line bg-surface py-1 shadow-lg">
               <div className="border-b border-line px-4 py-2.5">
                 <p className="truncate text-sm font-semibold text-ink">
                   {user?.full_name || t('common.defaultUserName')}
@@ -537,8 +537,8 @@ const MainLayout = () => {
       >
         {/* Cabecera de marca */}
         <div className="flex items-center gap-3 border-b border-white/10 px-4 py-4">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-600 shadow-brand">
-            <span className="font-display text-sm font-bold text-white">A</span>
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-gradient shadow-brand">
+            <span className="font-display text-base font-bold text-white">A</span>
           </div>
           {drawerOpen && (
             <div className="min-w-0 flex-1">
@@ -556,7 +556,7 @@ const MainLayout = () => {
               type="button"
               onClick={() => setDrawerOpen(false)}
               aria-label="Cerrar menú"
-              className="shrink-0 rounded p-1 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+              className="focus-ring shrink-0 rounded-lg p-1 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
@@ -582,7 +582,7 @@ const MainLayout = () => {
                 {user?.full_name || t('common.defaultUserName')}
               </p>
               {user?.roles && (
-                <span className="mt-1 w-fit rounded border border-white/20 bg-white/[0.15] px-2 py-0.5 text-[0.65rem] font-semibold">
+                <span className="mt-1 w-fit rounded-md border border-white/20 bg-white/[0.15] px-2 py-0.5 text-[0.65rem] font-semibold">
                   {user.roles[0]}
                 </span>
               )}
@@ -717,7 +717,7 @@ const MainLayout = () => {
         <div className="mx-2 mt-4 border-t border-white/[0.08] pt-3">
           <div
             className={cn(
-              'flex items-center gap-3 rounded px-2 py-1.5 transition-colors hover:bg-white/5',
+              'flex items-center gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-white/[0.06]',
               !drawerOpen && 'justify-center'
             )}
           >
@@ -746,7 +746,7 @@ const MainLayout = () => {
           <button
             type="button"
             onClick={() => setDrawerOpen((v) => !v)}
-            className="mt-1 flex w-full items-center gap-3 rounded px-2.5 py-2 text-xs font-medium text-sidebar-item/80 transition-colors hover:bg-white/[0.06] hover:text-white"
+            className="mt-1 flex w-full items-center gap-3 rounded-lg px-2.5 py-2 text-xs font-medium text-sidebar-item/80 transition-colors hover:bg-white/[0.06] hover:text-white"
           >
             <ChevronLeft className={cn('h-4 w-4 shrink-0 transition-transform', !drawerOpen && 'rotate-180')} />
             {drawerOpen && <span>{t('common.collapse') || 'Collapse'}</span>}

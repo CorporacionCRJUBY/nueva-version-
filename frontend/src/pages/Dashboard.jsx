@@ -283,7 +283,7 @@ const DashboardPage = () => {
   return (
     <div className="space-y-6">
       {/* ===================== Cabecera ===================== */}
-      <header className="relative overflow-hidden rounded-xl bg-hero-gradient p-5 text-white shadow-lg sm:p-6">
+      <header className="relative overflow-hidden rounded-2xl bg-hero-gradient p-5 text-white shadow-xl sm:p-6">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -317,8 +317,8 @@ const DashboardPage = () => {
             disabled={loading || refreshing}
             className={cn(
               'inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3.5 py-2',
-              'text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-200',
-              'hover:bg-white/20 disabled:pointer-events-none disabled:opacity-60'
+              'text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200',
+              'hover:border-white/40 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-60'
             )}
           >
             <RefreshCw className={cn('h-4 w-4', refreshing && 'animate-spin')} />

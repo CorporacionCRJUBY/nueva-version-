@@ -37,9 +37,14 @@ const STATUS_COLORS = {
 };
 
 const MonthlyAttendancePage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { assignmentId: routeAssignmentId } = useParams();
   const navigate = useNavigate();
+
+  // FIX (auditoría): los años del selector ya no están fijos en [2025..2028].
+  // Se derivan del año actual para que la vista siga siendo válida en el futuro.
+  const currentYear = new Date().getFullYear();
+  const yearOptions = Array.from({ length: 5 }, (_, i) => currentYear - 2 + i);
 
   const [assignmentId, setAssignmentId] = useState(routeAssignmentId || '');
   const [assignments, setAssignments] = useState([]);
@@ -127,10 +132,10 @@ const MonthlyAttendancePage = () => {
         <Grid container spacing={2} style={sx({ alignItems: 'center' })}>
           <Grid size={{ xs: 12, md: 6 }}>
             <FormControl fullWidth size="small">
-              <InputLabel>Academic Assignment</InputLabel>
+              <InputLabel>{t('attendance.academicAssignment')}</InputLabel>
               <Select
                 value={assignmentId}
-                label="Academic Assignment"
+                label={t('attendance.academicAssignment')}
                 onChange={(e) => setAssignmentId(e.target.value)}
               >
                 {assignments.map((a) => (
@@ -143,11 +148,11 @@ const MonthlyAttendancePage = () => {
           </Grid>
           <Grid size={{ xs: 6, md: 3 }}>
             <FormControl fullWidth size="small">
-              <InputLabel>Month</InputLabel>
-              <Select value={month} label="Month" onChange={(e) => setMonth(e.target.value)}>
+              <InputLabel>{t('attendance.month')}</InputLabel>
+              <Select value={month} label={t('attendance.month')} onChange={(e) => setMonth(e.target.value)}>
                 {[1,2,3,4,5,6,7,8,9,10,11,12].map((m) => (
                   <MenuItem key={m} value={m}>
-                    {new Date(2026, m - 1).toLocaleString('en-US', { month: 'long' })}
+                    {new Date(2026, m - 1).toLocaleString(i18n.language || 'en-US', { month: 'long' })}
                   </MenuItem>
                 ))}
               </Select>
@@ -155,9 +160,9 @@ const MonthlyAttendancePage = () => {
           </Grid>
           <Grid size={{ xs: 6, md: 3 }}>
             <FormControl fullWidth size="small">
-              <InputLabel>Year</InputLabel>
-              <Select value={year} label="Year" onChange={(e) => setYear(e.target.value)}>
-                {[2025, 2026, 2027, 2028].map((y) => (
+              <InputLabel>{t('attendance.year')}</InputLabel>
+              <Select value={year} label={t('attendance.year')} onChange={(e) => setYear(e.target.value)}>
+                {yearOptions.map((y) => (
                   <MenuItem key={y} value={y}>{y}</MenuItem>
                 ))}
               </Select>
@@ -171,20 +176,20 @@ const MonthlyAttendancePage = () => {
         <Paper style={sx({ p: 2, mb: 3, bgcolor: 'rgba(124,58,237,0.06)', borderLeft: '4px solid #7c3aed' })}>
           <Grid container spacing={2}>
             <Grid size={{ xs: 12, md: 3 }}>
-              <Typography variant="body2" color="textSecondary">Teacher</Typography>
+              <Typography variant="body2" color="textSecondary">{t('attendance.teacher')}</Typography>
               <Typography variant="subtitle2" style={sx({ fontWeight: 600 })}>{gridData.assignment.teacher_name || 'N/A'}</Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 3 }}>
-              <Typography variant="body2" color="textSecondary">Subject</Typography>
+              <Typography variant="body2" color="textSecondary">{t('attendance.subject')}</Typography>
               <Typography variant="subtitle2" style={sx({ fontWeight: 600 })}>{gridData.assignment.subject_name || 'N/A'}</Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 3 }}>
-              <Typography variant="body2" color="textSecondary">Grade & Section</Typography>
-              <Typography variant="subtitle2" style={sx({ fontWeight: 600 })}>Grade {gridData.assignment.grade} {gridData.assignment.section || ''}</Typography>
+              <Typography variant="body2" color="textSecondary">{t('attendance.grade')} & {t('students.section')}</Typography>
+              <Typography variant="subtitle2" style={sx({ fontWeight: 600 })}>{t('attendance.grade')} {gridData.assignment.grade} {gridData.assignment.section || ''}</Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 3 }}>
-              <Typography variant="body2" color="textSecondary">Branch</Typography>
-              <Typography variant="subtitle2" style={sx({ fontWeight: 600 })}>{gridData.assignment.branch_name || 'Kissimmee'}</Typography>
+              <Typography variant="body2" color="textSecondary">{t('students.branch')}</Typography>
+              <Typography variant="subtitle2" style={sx({ fontWeight: 600 })}>{gridData.assignment.branch_name || 'N/A'}</Typography>
             </Grid>
           </Grid>
         </Paper>

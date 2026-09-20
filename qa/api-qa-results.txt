@@ -1,7 +1,7 @@
 =============================================================================
  ACADEMIX 2.0 — QA DE API (end-to-end contra backend real)
- Base URL: http://localhost:5000
- Fecha: 2026-09-20 02:26:57 UTC
+ Base URL: http://localhost:5050
+ Fecha: 2026-09-20 04:41:10 UTC
  Entorno: Node v20.20.2 · mariadb  Ver 15.1 Distrib 10.11.18-Maria
 =============================================================================
 
@@ -109,5 +109,5 @@
 
 =============================================================================
  RESULTADO:  79 PASS  ·  1 FAIL  ·  80 comprobaciones
- Reporte: /workspace/academix-2.0_v4/qa/api-qa-results.txt
+ Reporte: /workspace/repo/qa/api-qa-results.txt
 =============================================================================

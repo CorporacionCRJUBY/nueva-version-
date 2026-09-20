@@ -1,0 +1,31 @@
+{
+  "users": {
+    "add": "Add",
+    "assignRoles": "Assign Roles",
+    "availableRoles": "Available Roles",
+    "branch": "Branch",
+    "cannotEditOwnRoles": "Cannot Edit Own Roles",
+    "changePassword": "Change Password",
+    "code": "Code",
+    "confirmDeleteUser": "Confirm Delete User",
+    "confirmPassword": "Confirm Password",
+    "edit": "Edit",
+    "email": "Email",
+    "fullName": "Full Name",
+    "generalInfo": "General Info",
+    "lastLogin": "Last Login",
+    "leaveBlankToKeep": "Leave Blank To Keep",
+    "newPassword": "New Password",
+    "currentPassword": "Current Password",
+    "noData": "No Data",
+    "noRolesAssigned": "No Roles Assigned",
+    "password": "Password",
+    "passwordMismatch": "Password Mismatch",
+    "passwordSection": "Password Section",
+    "phone": "Phone",
+    "role": "Role",
+    "search": "Search",
+    "status": "Status",
+    "title": "Users"
+  }
+}

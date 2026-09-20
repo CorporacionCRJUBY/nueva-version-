@@ -1,0 +1,59 @@
+# FILE: .dockerignore
+# El contexto de build del backend es la RAÍZ del repositorio, por lo que este
+# archivo es el que Docker aplica (backend/.dockerignore NO se usa cuando el
+# contexto es la raíz).
+#
+# Objetivo doble:
+#   1. SEGURIDAD — no enviar secretos (.env con JWT_SECRET, ENCRYPTION_KEY y
+#      contraseñas de base de datos) dentro del contexto de construcción.
+#   2. RENDIMIENTO — no transferir node_modules ni artefactos de build,
+#      que además se reconstruyen dentro de la imagen.
+
+# ---------- Secretos (CRÍTICO) ----------
+# Se excluyen los .env reales; las PLANTILLAS *.example sí entran al contexto
+# (son inofensivas y documentan las variables del despliegue).
+.env
+.env.*
+!.env.example
+!.env.*.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+!backend/.env.*.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+!frontend/.env.*.example
+
+# ---------- Dependencias (se reinstalan en la imagen) ----------
+node_modules
+**/node_modules
+
+# ---------- Builds y artefactos ----------
+**/dist
+**/build
+frontend/dist
+.vite
+
+# ---------- Datos de ejecución ----------
+uploads
+logs
+*.log
+coverage
+.nyc_output
+
+# ---------- Control de versiones y metadatos ----------
+.git
+.gitignore
+.github
+
+# ---------- Documentación y QA (no se necesitan en la imagen) ----------
+docs
+qa
+*.md
+
+# ---------- Sistema / editor ----------
+.DS_Store
+Thumbs.db
+.idea
+.vscode

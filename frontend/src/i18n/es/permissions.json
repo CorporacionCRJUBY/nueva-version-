@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "action": "Acción",
+    "add": "Agregar",
+    "approve": "Aprobar",
+    "code": "Código",
+    "confirmDeletePermission": "¿Eliminar este permiso?",
+    "create": "Crear",
+    "delete": "Eliminar",
+    "description": "Descripción",
+    "edit": "Editar",
+    "generate": "Generar",
+    "module": "Módulo",
+    "noData": "Sin datos",
+    "reject": "Rechazar",
+    "search": "Buscar",
+    "title": "Permisos",
+    "view": "Ver",
+    "validate": "Validar",
+    "manage": "Gestionar",
+    "requestChange": "Solicitar cambio"
+  }
+}

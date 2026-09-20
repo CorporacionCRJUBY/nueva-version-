@@ -1,0 +1,17 @@
+{
+  "academicYears": {
+    "active": "Active",
+    "activeHelp": "Active Help",
+    "add": "Add",
+    "code": "Code",
+    "confirmDeleteAcademicYear": "Confirm Delete Academic Year",
+    "edit": "Edit",
+    "endDate": "End Date",
+    "name": "Name",
+    "noData": "No Data",
+    "search": "Search",
+    "startDate": "Start Date",
+    "status": "Status",
+    "title": "Academic Years"
+  }
+}

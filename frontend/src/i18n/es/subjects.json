@@ -1,0 +1,20 @@
+{
+  "subjects": {
+    "academicInfo": "Información Académica",
+    "add": "Agregar",
+    "branch": "Sede",
+    "code": "Código",
+    "confirmDeleteSubject": "¿Eliminar esta materia?",
+    "credits": "Créditos",
+    "description": "Descripción",
+    "edit": "Editar",
+    "generalInfo": "Información General",
+    "grade": "Grado",
+    "hours": "Hours",
+    "name": "Nombre",
+    "noData": "Sin datos",
+    "search": "Buscar",
+    "status": "Estado",
+    "title": "Materias"
+  }
+}

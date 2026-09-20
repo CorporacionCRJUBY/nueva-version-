@@ -1,0 +1,27 @@
+{
+  "transcripts": {
+    "add": "Add",
+    "code": "Code",
+    "confirmDeleteReport": "Confirm Delete Report",
+    "confirmReprint": "Confirm Reprint",
+    "created": "Created",
+    "edit": "Edit",
+    "generalInfo": "General Info",
+    "generate": "Generate",
+    "noData": "No Data",
+    "notes": "Notes",
+    "official": "Official",
+    "period": "Period",
+    "preview": "Preview",
+    "reprint": "Reprint",
+    "search": "Search",
+    "status": "Status",
+    "statusHint": "Status Hint",
+    "student": "Student",
+    "title": "Transcripts",
+    "type": "Type",
+    "unofficial": "Unofficial",
+    "version": "Version",
+    "year": "Year"
+  }
+}

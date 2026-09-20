@@ -1,0 +1,23 @@
+{
+  "grades": {
+    "title": "Calificaciones",
+    "add": "Agregar Calificación",
+    "edit": "Editar Calificación",
+    "search": "Buscar calificaciones...",
+    "noData": "No se encontraron calificaciones",
+    "code": "Código",
+    "student": "Estudiante",
+    "subject": "Materia",
+    "assignment": "Asignación",
+    "period": "Período",
+    "value": "Calificación",
+    "letter": "Letra",
+    "weight": "Peso",
+    "status": "Estado",
+    "deadline": "Fecha Límite",
+    "locked": "Bloqueado",
+    "lockedError": "Esta calificación está bloqueada y no se puede editar",
+    "generalInfo": "Información de la Calificación",
+    "confirmDeleteGrade": "¿Está seguro de que desea eliminar este registro de calificación?"
+  }
+}

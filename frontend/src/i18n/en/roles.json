@@ -1,0 +1,18 @@
+{
+  "roles": {
+    "add": "Add",
+    "assignPermissions": "Assign Permissions",
+    "availablePermissions": "Available Permissions",
+    "code": "Code",
+    "description": "Description",
+    "edit": "Edit",
+    "name": "Name",
+    "noData": "No Data",
+    "permissions": "Permissions",
+    "search": "Search",
+    "status": "Status",
+    "superAdminAlwaysFullAccess": "The SUPER_ADMIN role always has full access and cannot be modified.",
+    "viewOnlyNoEditPermission": "You can view this role's permissions, but only a SUPER_ADMIN can change them.",
+    "title": "Roles"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "gpa": {
+    "add": "Add",
+    "calculated": "Calculated",
+    "code": "Code",
+    "confirmDeleteGpa": "Confirm Delete GPA",
+    "confirmRecalculate": "Confirm Recalculate",
+    "credits": "Credits",
+    "cumulative": "Cumulative",
+    "edit": "Edit",
+    "generalInfo": "General Info",
+    "noData": "No Data",
+    "period": "Period",
+    "recalculate": "Recalculate",
+    "search": "Search",
+    "status": "Status",
+    "student": "Student",
+    "title": "GPA",
+    "value": "Value",
+    "year": "Year"
+  }
+}

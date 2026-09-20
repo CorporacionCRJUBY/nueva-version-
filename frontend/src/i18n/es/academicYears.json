@@ -1,0 +1,17 @@
+{
+  "academicYears": {
+    "active": "Activo",
+    "activeHelp": "Activo Help",
+    "add": "Agregar",
+    "code": "Código",
+    "confirmDeleteAcademicYear": "Confirmar Eliminar Académico Año",
+    "edit": "Editar",
+    "endDate": "Fecha de Fin",
+    "name": "Nombre",
+    "noData": "Sin datos",
+    "search": "Buscar",
+    "startDate": "Fecha de Inicio",
+    "status": "Estado",
+    "title": "Años Académicos"
+  }
+}

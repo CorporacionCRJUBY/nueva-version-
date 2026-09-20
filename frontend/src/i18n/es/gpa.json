@@ -1,0 +1,22 @@
+{
+  "gpa": {
+    "add": "Agregar",
+    "calculated": "Calculado",
+    "code": "Código",
+    "confirmDeleteGpa": "¿Eliminar este registro de GPA?",
+    "confirmRecalculate": "Confirmar Recalcular",
+    "credits": "Créditos",
+    "cumulative": "Acumulado",
+    "edit": "Editar",
+    "generalInfo": "Información General",
+    "noData": "Sin datos",
+    "period": "Período",
+    "recalculate": "Recalcular",
+    "search": "Buscar",
+    "status": "Estado",
+    "student": "Estudiante",
+    "title": "GPA",
+    "value": "Valor",
+    "year": "Año"
+  }
+}

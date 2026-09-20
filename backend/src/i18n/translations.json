@@ -1,0 +1,46 @@
+{
+  "es": {
+    "app.name": "ACADEMIX",
+    "error.generic": "Se produjo un error inesperado",
+    "error.notFound": "Recurso no encontrado",
+    "error.unauthorized": "No autorizado",
+    "error.forbidden": "Acceso prohibido",
+    "error.validation": "Los datos enviados no son válidos",
+    "error.conflict": "El recurso ya existe",
+    "error.badRequest": "Solicitud incorrecta",
+    "error.internal": "Error interno del servidor"
+  },
+  "en": {
+    "app.name": "ACADEMIX",
+    "error.generic": "An unexpected error occurred",
+    "error.notFound": "Resource not found",
+    "error.unauthorized": "Unauthorized",
+    "error.forbidden": "Access forbidden",
+    "error.validation": "Submitted data is invalid",
+    "error.conflict": "Resource already exists",
+    "error.badRequest": "Bad request",
+    "error.internal": "Internal server error"
+  },
+  "fr": {
+    "app.name": "ACADEMIX",
+    "error.generic": "Une erreur inattendue s'est produite",
+    "error.notFound": "Ressource non trouvée",
+    "error.unauthorized": "Non autorisé",
+    "error.forbidden": "Accès interdit",
+    "error.validation": "Les données soumises ne sont pas valides",
+    "error.conflict": "La ressource existe déjà",
+    "error.badRequest": "Requête incorrecte",
+    "error.internal": "Erreur interne du serveur"
+  },
+  "pt": {
+    "app.name": "ACADEMIX",
+    "error.generic": "Ocorreu um erro inesperado",
+    "error.notFound": "Recurso não encontrado",
+    "error.unauthorized": "Não autorizado",
+    "error.forbidden": "Acesso proibido",
+    "error.validation": "Os dados enviados não são válidos",
+    "error.conflict": "O recurso já existe",
+    "error.badRequest": "Solicitação incorreta",
+    "error.internal": "Erro interno do servidor"
+  }
+}

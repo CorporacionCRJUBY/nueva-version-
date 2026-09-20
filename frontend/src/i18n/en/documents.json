@@ -1,0 +1,33 @@
+{
+  "documents": {
+    "certificate": "Certificate",
+    "code": "Code",
+    "confirmDeleteDocument": "Confirm Delete Document",
+    "consent": "Consent",
+    "edit": "Edit",
+    "fileFormats": "File Formats",
+    "fileName": "File Name",
+    "generalInfo": "General Info",
+    "identification": "Identification",
+    "medical": "Medical",
+    "noData": "No Data",
+    "other": "Other",
+    "preview": "Preview",
+    "previewNotSupported": "This file type can't be previewed here. Download it to view it.",
+    "currentFile": "Current file",
+    "noFile": "This document has no associated file.",
+    "replaceFile": "Replace file",
+    "search": "Search",
+    "selectFile": "Select File",
+    "size": "Size",
+    "status": "Status",
+    "student": "Student",
+    "documentTitle": "Title",
+    "title": "Documents",
+    "transcript": "Transcript",
+    "type": "Type",
+    "upload": "Upload",
+    "uploadDate": "Upload Date",
+    "uploading": "Uploading"
+  }
+}

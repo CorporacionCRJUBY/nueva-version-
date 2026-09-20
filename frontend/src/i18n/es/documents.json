@@ -1,0 +1,33 @@
+{
+  "documents": {
+    "certificate": "Certificado",
+    "code": "Código",
+    "confirmDeleteDocument": "¿Eliminar este documento?",
+    "consent": "Consentimiento",
+    "edit": "Editar",
+    "fileFormats": "Formatos de Archivo",
+    "fileName": "Nombre de Archivo",
+    "generalInfo": "Información General",
+    "identification": "Identificación",
+    "medical": "Médico",
+    "noData": "Sin datos",
+    "other": "Otro",
+    "preview": "Vista previa",
+    "previewNotSupported": "Este tipo de archivo no se puede previsualizar aquí. Descárgalo para verlo.",
+    "currentFile": "Archivo actual",
+    "noFile": "Este documento no tiene un archivo asociado.",
+    "replaceFile": "Reemplazar archivo",
+    "search": "Buscar",
+    "selectFile": "Seleccionar Archivo",
+    "size": "Tamaño",
+    "status": "Estado",
+    "student": "Estudiante",
+    "documentTitle": "Título",
+    "title": "Documentos",
+    "transcript": "Expediente Académico",
+    "type": "Tipo",
+    "upload": "Subir",
+    "uploadDate": "Fecha de Subida",
+    "uploading": "Subiendo..."
+  }
+}

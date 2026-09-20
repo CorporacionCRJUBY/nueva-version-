@@ -1,0 +1,15 @@
+{
+  "activity": {
+    "action": "Acción",
+    "date": "Fecha",
+    "details": "Detalles",
+    "ip": "IP",
+    "module": "Módulo",
+    "noData": "Sin datos",
+    "notFound": "No Encontrado",
+    "record": "Registro",
+    "search": "Buscar",
+    "title": "Actividad",
+    "user": "Usuario"
+  }
+}

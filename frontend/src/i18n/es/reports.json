@@ -1,0 +1,27 @@
+{
+  "reports": {
+    "title": "Reportes",
+    "search": "Buscar reportes...",
+    "noData": "No se encontraron reportes",
+    "code": "Código",
+    "category": "Categoría",
+    "student": "Estudiante",
+    "date": "Fecha",
+    "status": "Estado",
+    "version": "Versión",
+    "details": "Detalles del Reporte",
+    "preview": "Vista Previa PDF",
+    "generate": "Generar Reporte",
+    "viewPdf": "Ver PDF",
+    "notes": "Notas",
+    "notFound": "Reporte no encontrado",
+    "attendance": "Reporte de Asistencia",
+    "grades": "Reporte de Calificaciones",
+    "progressReports": "Reporte de Progreso",
+    "reportCards": "Boleta de Calificaciones",
+    "academicHistory": "Historial Académico",
+    "transcripts": "Transcripción",
+    "scholarships": "Becas",
+    "graduation": "Graduación"
+  }
+}

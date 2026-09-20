@@ -1,0 +1,144 @@
+==============================================================================
+ ACADEMIX 2.0 — BARRIDO DE API (todos los módulos)
+ Base: http://localhost:5000 · Fecha: 2026-09-20T02:26:50.043Z
+==============================================================================
+
+0. SALUD Y ARRANQUE
+  [PASS] GET / -> 200 (raíz)
+  [PASS] GET /health/live -> 200 (liveness)
+  [PASS] GET /health/ready -> 200 (readiness (BD))
+
+1. AUTENTICACIÓN
+  [PASS] POST /api/auth/login -> 401 (login con contraseña incorrecta)
+  [PASS] GET /api/auth/me -> 401 (me sin sesión)
+  [PASS] GET /api/students -> 401 (endpoint protegido sin sesión)
+  [PASS] login admin -> 200
+  [PASS] GET /api/auth/me -> 200 (me con sesión)
+
+2. RBAC — docente contra rutas de administrador
+  [PASS] login docente -> 200
+  [PASS] GET /api/users -> 403 (docente no puede listar usuarios)
+  [PASS] GET /api/roles -> 403 (docente no puede listar roles)
+  [PASS] DELETE /api/students/1 -> 403 (docente no puede borrar estudiantes)
+
+3. LISTADOS DE TODOS LOS MÓDULOS (GET colección)
+  [PASS] GET /api/users -> 200 — 1274 bytes
+  [PASS] GET /api/students -> 200 — 1948 bytes
+  [PASS] GET /api/teachers -> 200 — 1437 bytes
+  [PASS] GET /api/subjects -> 200 — 1054 bytes
+  [PASS] GET /api/branches -> 200 — 667 bytes
+  [PASS] GET /api/academic-years -> 200 — 335 bytes
+  [PASS] GET /api/academic-periods -> 200 — 1398 bytes
+  [PASS] GET /api/academic-history -> 200 — 3844 bytes
+  [PASS] GET /api/assignments -> 200 — 1333 bytes
+  [PASS] GET /api/attendance -> 200 — 7871 bytes
+  [PASS] GET /api/grades -> 200 — 4381 bytes
+  [PASS] GET /api/grade-change-requests -> 200 — 59 bytes
+  [PASS] GET /api/gpa -> 200 — 59 bytes
+  [PASS] GET /api/credits -> 200 — 59 bytes
+  [PASS] GET /api/scholarships -> 200 — 1130 bytes
+  [PASS] GET /api/guardians -> 200 — 1571 bytes
+  [PASS] GET /api/medical-records -> 200 — 59 bytes
+  [PASS] GET /api/previous-schools -> 200 — 59 bytes
+  [PASS] GET /api/documents -> 200 — 59 bytes
+  [PASS] GET /api/calendar -> 200 — 59 bytes
+  [PASS] GET /api/graduation -> 200 — 59 bytes
+  [PASS] GET /api/gransif -> 200 — 59 bytes
+  [PASS] GET /api/progress-reports -> 200 — 59 bytes
+  [PASS] GET /api/report-cards -> 200 — 59 bytes
+  [PASS] GET /api/transcripts -> 200 — 515 bytes
+  [PASS] GET /api/reports -> 200 — 59 bytes
+  [PASS] GET /api/audit -> 200 — 3898 bytes
+  [PASS] GET /api/activity -> 200 — 59 bytes
+  [PASS] GET /api/roles -> 200 — 877 bytes
+  [PASS] GET /api/permissions -> 200 — 5193 bytes
+  [PASS] GET /api/settings -> 200 — 26 bytes
+  [PASS] GET /api/system/metrics -> 200 — 714 bytes
+  [PASS] GET /api/system/services -> 200 — 332 bytes
+  [PASS] GET /api/system/logs -> 200 — 128 bytes
+
+  [INFO] IDs detectados: {"student":2,"teacher":1,"user":2,"subject":3,"branch":1,"year":1,"role":2,"assignment":1,"grade":1,"guardian":3,"transcript":1}
+
+4. DETALLE POR ID (GET /recurso/:id)
+  [PASS] GET /api/users/2 -> 200 (detalle)
+  [PASS] GET /api/students/2 -> 200 (detalle)
+  [PASS] GET /api/teachers/1 -> 200 (detalle)
+  [PASS] GET /api/subjects/3 -> 200 (detalle)
+  [PASS] GET /api/branches/1 -> 200 (detalle)
+  [PASS] GET /api/academic-years/1 -> 200 (detalle)
+  [PASS] GET /api/roles/2 -> 200 (detalle)
+  [PASS] GET /api/students/99999999 -> 404 (id inexistente -> 404 limpio)
+
+5. CRUD REAL — crear, leer, actualizar, borrar
+  [PASS] POST /api/branches -> creado
+  [PASS] PUT /api/branches/3 -> 200 (actualizar)
+  [PASS] DELETE /api/branches/3 -> 200 (borrar)
+  [PASS] POST /api/subjects -> creado
+  [PASS] PUT /api/subjects/4 -> 200 (actualizar)
+  [PASS] POST /api/students -> creado
+  [PASS] GET /api/students/4 -> 200 (leer creado)
+  [PASS] GET /api/students/4/record -> 200 (expediente completo)
+  [PASS] PUT /api/students/4 -> 200 (actualizar)
+  [PASS] POST /api/students/4/status -> 200 (cambiar estado)
+  [PASS] POST /api/teachers -> creado
+  [PASS] POST /api/users -> creado
+  [PASS] POST /api/users/4/change-password -> 200 (cambiar contraseña)
+  [PASS] POST /api/academic-years -> creado
+  [PASS] POST /api/calendar -> creado
+  [PASS] PUT /api/calendar/1 -> 200 (actualizar evento)
+  [PASS] DELETE /api/calendar/1 -> 200 (borrar evento)
+
+6. VALIDACIÓN Y ERRORES DE BASE DE DATOS
+  [PASS] POST /api/students -> 400 (estudiante sin campos obligatorios)
+  [PASS] POST /api/users -> 400 (usuario sin email)
+  [PASS] POST /api/subjects -> 400 (materia vacía)
+  [PASS] POST /api/auth/login -> 400 (login sin body)
+  [PASS] primer usuario con email único -> creado
+  [PASS] email duplicado -> 409 (conflicto claro, no 500)
+  [PASS] FK inexistente -> 400 (no 500)
+
+7. ENDPOINTS ESPECIALIZADOS (acciones / reportes)
+  [PASS] GET /api/students/2/photo -> 404 (foto de estudiante)
+  [PASS] GET /api/gpa/cumulative/2 -> 200 (GPA acumulado)
+  [PASS] POST /api/gpa/recalculate/2 -> 200 (recalcular GPA)
+  [PASS] POST /api/credits/recalculate/2 -> 200 (recalcular créditos)
+  [PASS] POST /api/graduation/validate/2 -> 404 (validar graduación)
+  [PASS] GET /api/guardians/student/2 -> 200 (acudientes del estudiante)
+  [PASS] GET /api/previous-schools/student/2 -> 200 (escuelas previas)
+  [PASS] GET /api/academic-history/student/2 -> 200 (historial académico)
+  [PASS] GET /api/transcripts/student/2 -> 404 (transcripts del estudiante)
+  [PASS] GET /api/teachers/1/assignments -> 200 (asignaciones del docente)
+  [PASS] GET /api/assignments/teacher/1 -> 200 (asignaciones por docente)
+  [PASS] GET /api/users/2/roles -> 200 (roles del usuario)
+  [PASS] GET /api/roles/2/permissions -> 200 (permisos del rol)
+  [PASS] GET /api/attendance/monthly/1/2026/9 -> 200 (asistencia mensual)
+  [PASS] GET /api/assignments/section/A -> 200 (asignaciones por sección)
+  [PASS] GET /api/attendance/student/2/2026/9 -> 200 (asistencia del estudiante)
+
+8. GENERACIÓN DE DOCUMENTOS (PDF) Y REPORTES
+  [INFO] sin report-cards en la BD para probar preview
+  [PASS] GET /api/transcripts/1/preview -> 200 (application/pdf)
+
+9. SEGURIDAD Y CABECERAS
+  [PASS] X-Content-Type-Options presente
+  [PASS] protección anti-clickjacking
+  [PASS] no expone X-Powered-By
+  [PASS] GET /api/students?search=' OR 1=1 -- -> 200 (payload SQL no rompe)
+  [PASS] GET /api/students?search=<script>alert(1)</script> -> 200 (payload XSS no rompe)
+
+10. PAGINACIÓN, ORDEN Y FILTROS
+  [PASS] GET /api/students?page=1&limit=5 -> 200 (paginación)
+  [PASS] GET /api/students?sort=last_name&order=asc -> 200 (ordenamiento)
+  [PASS] GET /api/students?search=QA -> 200 (búsqueda)
+  [PASS] GET /api/students?page=abc&limit=-5 -> 200 (paginación inválida no explota)
+
+11. i18n
+  [PASS] GET /api/students?limit=1 -> 200 (Accept-Language en-US)
+  [PASS] GET /api/students?limit=1 -> 200 (Accept-Language es-ES)
+
+12. LOGOUT
+  [PASS] POST /api/auth/logout -> 200 (logout)
+
+==============================================================================
+ RESULTADO:  107 PASS · 0 FAIL · 1 INFO · 107 comprobaciones
+==============================================================================

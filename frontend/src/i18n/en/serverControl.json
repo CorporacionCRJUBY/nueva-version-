@@ -1,0 +1,20 @@
+{
+  "serverControl": {
+    "title": "Server Control Panel",
+    "subtitle": "Monitor and manage the server infrastructure",
+    "cpu": "CPU Usage",
+    "memory": "Memory",
+    "disk": "Disk",
+    "uptime": "Uptime",
+    "services": "Services",
+    "service": "Service",
+    "status": "Status",
+    "actions": "Actions",
+    "running": "Running",
+    "down": "Down",
+    "restart": "Restart",
+    "logs": "Application Logs",
+    "lastUpdated": "Last updated",
+    "restarting": "Restarting..."
+  }
+}

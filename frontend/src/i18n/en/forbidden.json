@@ -1,0 +1,7 @@
+{
+  "forbidden": {
+    "goHome": "Go Home",
+    "message": "You do not have permission to access this page.",
+    "title": "Forbidden"
+  }
+}

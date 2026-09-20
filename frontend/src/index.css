@@ -1,0 +1,400 @@
+/* FILE: frontend/src/index.css */
+/* ============================================================================
+   ACADEMIX 2.0 — Design System (Tailwind CSS)
+   New Direction Academy · Academic Management System
+
+   REDISEÑO VISUAL — lenguaje visual tomado del panel de referencia:
+     · sidebar morado profundo (#241046) sobre lienzo lavanda claro,
+     · acento morado (#7847e3) y acento lila (#ad93fb), tipografía Outfit,
+     · tarjetas blancas con borde hairline, sombras muy suaves,
+     · radios contenidos y densidad administrativa alta.
+
+   Capas:
+     1. Tailwind (base + components + utilities)
+     2. Tokens CSS (fuente de verdad para estilos inline heredados)
+     3. Componentes de la capa `@layer components` (botones, tarjetas, inputs,
+        tablas, chips, badges) usados por los componentes de la app.
+   ============================================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------------------------------------------
+   2. TOKENS CSS
+   Espejo en CSS de tailwind.config.js. Se usan para los estilos inline que
+   provienen de la API `sx` heredada y para componentes de terceros.
+   ---------------------------------------------------------------------------- */
+:root {
+  --brand-50: #f5f3ff;
+  --brand-100: #ede9fe;
+  --brand-200: #ddd6fe;
+  --brand-300: #c4b5fd;
+  --brand-400: #a78bfa;
+  --brand-500: #8b5cf6;
+  --brand-600: #7c3aed;
+  --brand-700: #6d28d9;
+  --brand-800: #5b21b6;
+  --brand-900: #4c1d95;
+
+  --violet-700: #6d28d9;
+  --violet-800: #4c1d95;
+  --violet-900: #2d1b69;
+  --violet-950: #1e1b4b;
+
+  --color-primary: #7c3aed;
+  --color-primary-light: #8b5cf6;
+  --color-primary-dark: #6d28d9;
+  --color-secondary: #a78bfa;
+  --color-secondary-light: #c4b5fd;
+
+  --color-background: #f5f3ff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f3ff;
+  --color-surface-hover: #f5f3ff;
+  --color-sidebar: #1e1b4b;
+  --color-sidebar-deep: #191241;
+
+  --color-text-primary: #1e1b4b;
+  --color-text-secondary: #6b5b95;
+  --color-text-faint: #7c6faa;
+
+  --color-divider: #ddd6fe;
+  --color-divider-hover: #c4b5fd;
+
+  --color-success: #047857;
+  --color-warning: #b45309;
+  --color-error: #b91c1c;
+  --color-info: #7c3aed;
+
+  --gradient-primary: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%);
+  --gradient-accent: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
+  --gradient-hero: linear-gradient(145deg, #2d1b69 0%, #4c1d95 50%, #6d28d9 100%);
+
+  --shadow-sm: 0 1px 2px rgba(30,27,75,0.05);
+  --shadow-md: 0 4px 12px rgba(30,27,75,0.08), 0 1px 3px rgba(30,27,75,0.04);
+  --shadow-lg: 0 12px 32px rgba(30,27,75,0.12), 0 2px 8px rgba(30,27,75,0.06);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --sidebar-width: 264px;
+  --sidebar-width-collapsed: 76px;
+  --appbar-height: 64px;
+}
+
+/* ----------------------------------------------------------------------------
+   1. BASE
+   ---------------------------------------------------------------------------- */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply font-body text-base text-ink antialiased;
+    /* La referencia usa un lienzo lavanda plano (#f5f3ff), sin degradados. */
+    background-color: var(--color-background);
+    line-height: 1.45;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-ink;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: var(--brand-500);
+  }
+
+  /* Accesibilidad: foco siempre visible y consistente */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: #c4b5fd;
+    color: #1e1b4b;
+  }
+
+  /* Barra de desplazamiento fina (4px), como la referencia */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-divider-hover);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-400);
+  }
+
+  /* Los inputs heredan la tipografía de la app */
+  input, select, textarea, button {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Quita el spinner nativo del input numérico (lo reemplaza el diseño) */
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   3. COMPONENTES
+   Clases semánticas que consumen los componentes de la app y las páginas.
+   ---------------------------------------------------------------------------- */
+@layer components {
+  /* --- Superficies --- */
+  .card {
+    @apply rounded-lg border border-line bg-surface shadow-sm;
+  }
+  .card-hover {
+    @apply transition-shadow duration-200 hover:shadow-md;
+  }
+  .panel {
+    @apply rounded-lg border border-line bg-surface;
+  }
+
+  /* --- Botones --- */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 whitespace-nowrap rounded-lg
+           px-4 py-2 text-sm font-semibold transition-all duration-200
+           disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-brand-600 text-white shadow-brand hover:bg-brand-700 active:bg-brand-800;
+  }
+  .btn-secondary {
+    @apply border border-line-strong bg-surface text-ink-soft hover:bg-hover hover:text-ink;
+  }
+  .btn-ghost {
+    @apply text-brand-700 hover:bg-brand-500/10;
+  }
+  .btn-danger {
+    @apply bg-danger text-white shadow-xs hover:brightness-110;
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+
+  /* --- Campos de formulario --- */
+  .field {
+    @apply w-full rounded-md border border-line bg-surface px-3 py-2 text-sm text-ink
+           transition-colors duration-150 placeholder:text-ink-muted
+           hover:border-line-strong focus:border-brand-500 focus:outline-none
+           focus:ring-2 focus:ring-brand-500/20 disabled:cursor-not-allowed disabled:bg-canvas;
+  }
+  .field-label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-soft;
+  }
+  .field-error {
+    @apply border-danger focus:border-danger focus:ring-danger/20;
+  }
+  .field-helper {
+    @apply mt-1 text-xs text-ink-muted;
+  }
+
+  /* --- Tablas --- */
+  .table-wrap {
+    @apply w-full overflow-hidden rounded-lg border border-line bg-surface shadow-sm;
+  }
+  .table-head-cell {
+    @apply border-b border-line bg-surface-2 px-4 py-3 text-left text-2xs
+           font-semibold uppercase tracking-wider text-ink-muted;
+  }
+  .table-cell {
+    @apply border-b border-line-subtle px-4 py-3 text-sm text-ink;
+  }
+  .table-row {
+    @apply transition-colors duration-150;
+  }
+  .table-row:hover {
+    @apply bg-surface-2;
+  }
+
+  /* --- Chips / badges --- */
+  /* Referencia: píldora completamente redondeada. */
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-2xs font-semibold;
+  }
+  .badge-dot {
+    @apply inline-block h-2 w-2 shrink-0 rounded-full;
+  }
+
+  /* --- Navegación lateral --- */
+  .nav-item {
+    @apply mx-2 mb-0.5 flex w-[calc(100%-1rem)] items-center gap-3 rounded px-3 py-2.5 text-sm font-medium
+           text-sidebar-item transition-all duration-200
+           hover:bg-white/[0.07] hover:text-white;
+  }
+  .nav-item-active {
+    /* Referencia: lavado violeta translúcido con texto lila claro y punto guía. */
+    @apply bg-brand-600/40 font-semibold text-brand-200 hover:bg-brand-600/45;
+  }
+  /* CONTRASTE (2026-09-19): las etiquetas de grupo a `white/60` sobre el
+     violeta profundo quedaban por debajo del ratio legible en un monitor
+     normal. `white/80` las hace claramente legibles sin robar protagonismo a
+     los elementos de navegación. */
+  .nav-group-label {
+    @apply px-5 pb-1.5 pt-4 text-2xs font-semibold uppercase tracking-[0.14em]
+           text-white/80;
+  }
+
+  /* --- Cabecera de página --- */
+  .page-header {
+    @apply mb-6 flex flex-wrap items-center justify-between gap-4;
+  }
+  .page-title {
+    @apply font-display text-2xl font-bold tracking-tight text-ink;
+  }
+  .page-subtitle {
+    @apply mt-0.5 text-sm text-ink-muted;
+  }
+
+  /* --- KPI / estadísticas --- */
+  /* Referencia: tarjeta blanca con borde lavanda, radio contenido, sin franja
+     superior de color (la identidad la da el mosaico del icono). */
+  .stat-card {
+    @apply relative overflow-hidden rounded-lg border border-line bg-surface p-5 shadow-sm
+           transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md;
+  }
+
+  /* --- Diálogos --- */
+  .modal-overlay {
+    @apply fixed inset-0 z-modal flex items-center justify-center bg-navy-950/60 p-4 backdrop-blur-sm;
+  }
+  .modal-panel {
+    @apply w-full max-w-lg animate-scale-in rounded-lg border border-line bg-surface shadow-xl;
+  }
+
+  /* --- Estados vacíos --- */
+  .empty-state {
+    @apply flex flex-col items-center justify-center gap-2 px-6 py-12 text-center text-ink-muted;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   UTILIDADES PROPIAS
+   ---------------------------------------------------------------------------- */
+@layer utilities {
+  .gradient-text {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+  .gradient-surface {
+    @apply bg-brand-gradient text-white;
+  }
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    @apply border border-line;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  /* Oculta la barra de scroll manteniendo el desplazamiento (matriz de asistencia) */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  /* Columna/celda fija para tablas anchas (matriz mensual de asistencia) */
+  .sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: var(--color-surface);
+    box-shadow: 1px 0 0 var(--color-divider);
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   IMPRESIÓN — informes (report cards, transcripts, RP) siempre en claro
+   ---------------------------------------------------------------------------- */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    background-image: none !important;
+    color: #000 !important;
+  }
+
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .card,
+  .panel,
+  .table-wrap {
+    border-color: #d8cdee !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  table {
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+
+  @page {
+    margin: 14mm;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   MOVIMIENTO REDUCIDO (preferencia del usuario)
+   ---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

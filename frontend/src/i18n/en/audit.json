@@ -1,0 +1,18 @@
+{
+  "audit": {
+    "action": "Action",
+    "after": "After",
+    "before": "Before",
+    "date": "Date",
+    "details": "Details",
+    "ip": "IP",
+    "module": "Module",
+    "noData": "No Data",
+    "notFound": "Not Found",
+    "reason": "Reason",
+    "record": "Record",
+    "search": "Search",
+    "title": "Audit",
+    "user": "User"
+  }
+}

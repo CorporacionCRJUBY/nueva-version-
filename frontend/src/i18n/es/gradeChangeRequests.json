@@ -1,0 +1,22 @@
+{
+  "gradeChangeRequests": {
+    "add": "Agregar",
+    "approve": "Aprobar",
+    "approveTitle": "Aprobar Título",
+    "code": "Código",
+    "current": "Actual",
+    "edit": "Editar",
+    "gradeRecord": "Grado Registro",
+    "noData": "Sin datos",
+    "reason": "Motivo",
+    "reject": "Rechazar",
+    "rejectTitle": "Rechazar Título",
+    "requested": "Solicitado",
+    "requestedAt": "Solicitado At",
+    "reviewNotes": "Review Notas",
+    "search": "Buscar",
+    "status": "Estado",
+    "student": "Estudiante",
+    "title": "Solicitudes de Cambio de Nota"
+  }
+}

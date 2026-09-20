@@ -1,0 +1,33 @@
+{
+  "teachers": {
+    "academicYear": "Academic Year",
+    "add": "Add",
+    "additionalInfo": "Additional Info",
+    "assignments": "Assignments",
+    "branch": "Branch",
+    "code": "Code",
+    "confirmDeleteTeacher": "Confirm Delete Teacher",
+    "contactInfo": "Contact Info",
+    "edit": "Edit",
+    "email": "Email",
+    "employmentInfo": "Employment Info",
+    "firstName": "First Name",
+    "grade": "Grade",
+    "hireDate": "Hire Date",
+    "lastName": "Last Name",
+    "name": "Name",
+    "noAssignments": "No Assignments",
+    "noData": "No Data",
+    "notFound": "Not Found",
+    "notes": "Notes",
+    "personalInfo": "Personal Info",
+    "phone": "Phone",
+    "schedule": "Schedule",
+    "search": "Search",
+    "section": "Section",
+    "specialization": "Specialization",
+    "status": "Status",
+    "subject": "Subject",
+    "title": "Teachers"
+  }
+}

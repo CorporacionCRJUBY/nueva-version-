@@ -1,0 +1,18 @@
+{
+  "roles": {
+    "add": "Agregar",
+    "assignPermissions": "Asignar Permissions",
+    "availablePermissions": "Permisos Disponibles",
+    "code": "Código",
+    "description": "Descripción",
+    "edit": "Editar",
+    "name": "Nombre",
+    "noData": "Sin datos",
+    "permissions": "Permisos",
+    "search": "Buscar",
+    "status": "Estado",
+    "superAdminAlwaysFullAccess": "El rol SUPER_ADMIN siempre tiene acceso total y no puede modificarse.",
+    "viewOnlyNoEditPermission": "Puede consultar los permisos de este rol, pero solo un SUPER_ADMIN puede modificarlos.",
+    "title": "Roles"
+  }
+}

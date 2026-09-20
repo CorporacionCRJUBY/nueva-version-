@@ -1,0 +1,21 @@
+{
+  "academicPeriods": {
+    "academicYear": "Año Académico",
+    "add": "Agregar",
+    "close": "Cerrar",
+    "code": "Código",
+    "confirmClose": "Confirmar Cerrar",
+    "confirmLock": "Confirmar Bloquear",
+    "edit": "Editar",
+    "endDate": "Fecha de Fin",
+    "lock": "Bloquear",
+    "lockedNotice": "Este registro está bloqueado",
+    "name": "Nombre",
+    "noData": "Sin datos",
+    "search": "Buscar",
+    "startDate": "Fecha de Inicio",
+    "status": "Estado",
+    "title": "Períodos Académicos",
+    "year": "Año"
+  }
+}

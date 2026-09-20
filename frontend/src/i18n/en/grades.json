@@ -1,0 +1,23 @@
+{
+  "grades": {
+    "title": "Grades",
+    "add": "Add Grade",
+    "edit": "Edit Grade",
+    "search": "Search grades...",
+    "noData": "No grades found",
+    "code": "Code",
+    "student": "Student",
+    "subject": "Subject",
+    "assignment": "Assignment",
+    "period": "Period",
+    "value": "Grade",
+    "letter": "Letter",
+    "weight": "Weight",
+    "status": "Status",
+    "deadline": "Edit Deadline",
+    "locked": "Locked",
+    "lockedError": "This grade is locked and cannot be edited",
+    "generalInfo": "Grade Information",
+    "confirmDeleteGrade": "Are you sure you want to delete this grade record?"
+  }
+}

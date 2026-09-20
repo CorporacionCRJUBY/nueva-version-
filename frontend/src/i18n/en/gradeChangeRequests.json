@@ -1,0 +1,22 @@
+{
+  "gradeChangeRequests": {
+    "add": "Add",
+    "approve": "Approve",
+    "approveTitle": "Approve Title",
+    "code": "Code",
+    "current": "Current",
+    "edit": "Edit",
+    "gradeRecord": "Grade Record",
+    "noData": "No Data",
+    "reason": "Reason",
+    "reject": "Reject",
+    "rejectTitle": "Reject Title",
+    "requested": "Requested",
+    "requestedAt": "Requested At",
+    "reviewNotes": "Review Notes",
+    "search": "Search",
+    "status": "Status",
+    "student": "Student",
+    "title": "Grade Change Requests"
+  }
+}

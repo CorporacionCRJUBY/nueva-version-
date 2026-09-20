@@ -1,0 +1,22 @@
+{
+  "progressReports": {
+    "add": "Agregar",
+    "code": "Código",
+    "confirmDeleteReport": "Confirmar Eliminar Reporte",
+    "date": "Fecha",
+    "edit": "Editar",
+    "generalInfo": "Información General",
+    "generate": "Generar",
+    "noData": "Sin datos",
+    "notes": "Notas",
+    "period": "Período",
+    "preview": "Vista Previa",
+    "search": "Buscar",
+    "status": "Estado",
+    "statusHint": "Estado Hint",
+    "student": "Estudiante",
+    "title": "Informes de Progreso",
+    "version": "Versión",
+    "year": "Año"
+  }
+}

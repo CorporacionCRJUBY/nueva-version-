@@ -186,7 +186,7 @@ const DataTable = ({
   const cellPad = dense ? 'px-3 py-2' : 'px-4 py-3';
 
   return (
-    <div className="w-full overflow-hidden rounded-lg border border-line bg-surface shadow-sm">
+    <div className="w-full overflow-hidden rounded-xl border border-line bg-surface shadow-sm">
       {/* ==================== Barra de herramientas ==================== */}
       {(showSearch || showFilter || showRefresh || showExport || actions.length > 0) && (
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line bg-card-shine p-4">
@@ -216,7 +216,7 @@ const DataTable = ({
                   aria-label={t('common.filter')}
                   aria-expanded={filterOpen}
                   className={cn(
-                    'rounded p-2 transition-colors hover:bg-hover',
+                    'focus-ring rounded-lg p-2 transition-colors hover:bg-hover',
                     filterOpen ? 'bg-brand-500/10 text-brand-700' : 'text-ink-soft'
                   )}
                 >
@@ -224,7 +224,7 @@ const DataTable = ({
                 </button>
 
                 {filterOpen && (
-                  <div className="absolute left-0 z-modal mt-2 min-w-[14rem] animate-scale-in rounded-lg border border-line bg-surface p-4 shadow-md">
+                  <div className="absolute left-0 z-modal mt-2 min-w-[14rem] animate-scale-in rounded-xl border border-line bg-surface p-4 shadow-lg">
                     {filterFields.map((field) => (
                       <div key={field.name} className="mb-3 last:mb-0">
                         <label htmlFor={`filter-${field.name}`} className="field-label text-xs">
@@ -259,7 +259,7 @@ const DataTable = ({
                 disabled={loading}
                 title={t('common.refresh')}
                 aria-label={t('common.refresh')}
-                className="rounded p-2 text-ink-soft transition-colors hover:bg-hover disabled:opacity-40"
+                className="focus-ring rounded-lg p-2 text-ink-soft transition-colors hover:bg-hover hover:text-brand-600 disabled:opacity-40"
               >
                 <RefreshCw className={cn('h-5 w-5', loading && 'animate-spin')} />
               </button>
@@ -272,7 +272,7 @@ const DataTable = ({
                 disabled={loading}
                 title={t('common.export')}
                 aria-label={t('common.export')}
-                className="rounded p-2 text-ink-soft transition-colors hover:bg-hover disabled:opacity-40"
+                className="focus-ring rounded-lg p-2 text-ink-soft transition-colors hover:bg-hover hover:text-brand-600 disabled:opacity-40"
               >
                 <Download className="h-5 w-5" />
               </button>
@@ -287,7 +287,7 @@ const DataTable = ({
                 title={action.label}
                 aria-label={action.label}
                 className={cn(
-                  'rounded p-2 transition-colors hover:bg-hover disabled:opacity-40',
+                  'focus-ring rounded-lg p-2 transition-colors hover:bg-hover disabled:opacity-40',
                   action.color === 'error' ? 'text-danger' : 'text-brand-600'
                 )}
               >
@@ -427,7 +427,7 @@ const DataTable = ({
                               aria-label={t('common.actions')}
                               aria-haspopup="menu"
                               aria-expanded={menuOpen}
-                              className="rounded p-1.5 text-ink-soft transition-colors hover:bg-hover"
+                              className="focus-ring rounded-lg p-1.5 text-ink-soft transition-colors hover:bg-hover hover:text-brand-600"
                             >
                               <MoreVertical className="h-4 w-4" />
                             </button>
@@ -480,7 +480,7 @@ const DataTable = ({
               onClick={() => onPageChange && onPageChange(page - 1)}
               disabled={page <= 0}
               aria-label="Previous page"
-              className="rounded p-1.5 text-ink-soft transition-colors hover:bg-hover disabled:opacity-30"
+              className="focus-ring rounded-lg border border-line p-1.5 text-ink-soft transition-colors hover:border-brand-300 hover:bg-hover hover:text-brand-600 disabled:opacity-30"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -489,7 +489,7 @@ const DataTable = ({
               onClick={() => onPageChange && onPageChange(page + 1)}
               disabled={page + 1 >= totalPages}
               aria-label="Next page"
-              className="rounded p-1.5 text-ink-soft transition-colors hover:bg-hover disabled:opacity-30"
+              className="focus-ring rounded-lg border border-line p-1.5 text-ink-soft transition-colors hover:border-brand-300 hover:bg-hover hover:text-brand-600 disabled:opacity-30"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
@@ -505,7 +505,7 @@ function RowActionMenu({ actions, row, onClose }) {
   return (
     <div
       role="menu"
-      className="absolute right-2 top-full z-modal min-w-[11rem] animate-scale-in overflow-hidden rounded-lg border border-line bg-surface py-1 text-left shadow-md"
+      className="absolute right-2 top-full z-modal min-w-[11rem] animate-scale-in overflow-hidden rounded-xl border border-line bg-surface py-1 text-left shadow-lg"
     >
       {actions.map((action, index) => (
         <button

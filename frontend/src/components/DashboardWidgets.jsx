@@ -65,7 +65,7 @@ export const StatCard = ({ label, value, icon: Icon, accent = 'brand', hint, to,
   );
 
   const classes = cn(
-    'group relative flex flex-col overflow-hidden rounded-lg border border-line bg-surface p-4 shadow-sm',
+    'group relative flex flex-col overflow-hidden rounded-xl border border-line bg-surface p-4 shadow-sm',
     'transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md',
     className
   );
@@ -95,7 +95,7 @@ export const Panel = ({
 }) => (
   <section
     className={cn(
-      'flex flex-col overflow-hidden rounded-lg border border-line bg-surface shadow-sm',
+      'flex flex-col overflow-hidden rounded-xl border border-line bg-surface shadow-sm',
       className
     )}
   >
@@ -133,7 +133,7 @@ export const EmptyState = ({ icon: Icon, title, description, action, className, 
     )}
   >
     {Icon && (
-      <span className="mb-1 grid h-12 w-12 place-items-center rounded-lg bg-brand-50 text-brand-400 ring-1 ring-inset ring-brand-100">
+      <span className="mb-1 grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-400 ring-1 ring-inset ring-brand-100">
         <Icon className="h-5 w-5" />
       </span>
     )}
@@ -151,7 +151,7 @@ export const EmptyState = ({ icon: Icon, title, description, action, className, 
 export const StatCardSkeleton = ({ className }) => (
   <div
     className={cn(
-      'flex flex-col overflow-hidden rounded-lg border border-line bg-surface p-5 shadow-sm',
+      'flex flex-col overflow-hidden rounded-xl border border-line bg-surface p-5 shadow-sm',
       className
     )}
   >

@@ -1,0 +1,97 @@
+# =============================================================================
+# ACADEMIX 2.0 — .gitignore raíz
+# =============================================================================
+
+# --- Dependencias -----------------------------------------------------------
+node_modules/
+**/node_modules/
+.pnp
+.pnp.js
+.yarn/
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# --- Secretos y variables de entorno ----------------------------------------
+# NUNCA versionar archivos .env reales. Usa los .env.example como plantilla.
+.env
+.env.*
+!.env.example
+!*.env.example
+**/.env
+**/.env.*
+!**/.env.example
+!**/*.env.example
+
+# --- Build / artefactos -----------------------------------------------------
+dist/
+build/
+out/
+.vite/
+**/dist/
+**/build/
+*.tsbuildinfo
+
+# --- Cobertura de pruebas ---------------------------------------------------
+coverage/
+**/coverage/
+.nyc_output/
+*.lcov
+
+# --- Logs -------------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Caches de herramientas ------------------------------------------------
+.eslintcache
+.stylelintcache
+.cache/
+.parcel-cache/
+.turbo/
+.npm/
+node_modules/.cache/
+
+# --- Sistema operativo ------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Editores / IDE ---------------------------------------------------------
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+*.swp
+*.swo
+*~
+
+# --- Runtime / datos locales ------------------------------------------------
+tmp/
+temp/
+.tmp/
+pids/
+*.pid
+*.seed
+*.pid.lock
+uploads/
+**/uploads/*
+!**/uploads/.gitkeep
+
+# --- Docker / volúmenes -----------------------------------------------------
+docker-compose.override.yml
+.docker/
+
+# --- Pruebas / QA -----------------------------------------------------------
+.qa-tmp/
+qa/.tmp/

@@ -9,9 +9,9 @@ import Logo from '../components/Logo';
 /**
  * Layout de autenticación: panel de marca + panel de formulario.
  *
- * REDISEÑO VISUAL: panel de marca en azul marino profundo con acento azul
- * (lenguaje visual del panel de referencia). Conserva el idioma, el logo, los
- * textos i18n y el snackbar global de errores.
+ * REDISEÑO VISUAL: panel de marca en morado profundo con acento lila
+ * (lenguaje visual del design system ACADEMIX). Conserva el idioma, el logo,
+ * los textos i18n y el snackbar global de errores.
  */
 const AuthLayout = ({ children, title, subtitle }) => {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ const AuthLayout = ({ children, title, subtitle }) => {
 
   return (
     <div className="flex min-h-screen items-stretch justify-center bg-canvas p-0 md:p-6">
-      <div className="flex m-auto w-full max-w-6xl overflow-hidden rounded-none shadow-xl md:rounded-2xl">
+      <div className="m-auto flex w-full max-w-6xl overflow-hidden rounded-none shadow-xl md:rounded-3xl">
         {/* ---------- Panel de marca ---------- */}
         <div className="relative hidden flex-1 flex-col justify-between overflow-hidden bg-hero-gradient p-10 text-white md:flex lg:p-12">
           {/* Orbes decorativos + retícula */}

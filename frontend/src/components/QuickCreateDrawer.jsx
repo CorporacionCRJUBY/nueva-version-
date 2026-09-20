@@ -240,7 +240,7 @@ const QuickCreateDrawer = ({
             type="button"
             onClick={() => !submitting && onClose?.()}
             aria-label="Cerrar"
-            className="rounded p-1.5 text-ink-soft transition-colors hover:bg-hover hover:text-ink"
+            className="focus-ring rounded-lg p-1.5 text-ink-soft transition-colors hover:bg-hover hover:text-ink"
           >
             <X className="h-5 w-5" />
           </button>

@@ -146,7 +146,7 @@ export const FormSection = ({
   <section
     data-testid="form-section"
     className={cn(
-      'overflow-hidden rounded-lg border border-line bg-surface shadow-sm',
+      'overflow-hidden rounded-xl border border-line bg-surface shadow-sm',
       className
     )}
   >
@@ -270,7 +270,7 @@ export const FormActions = ({ children, className, sticky = true, note }) => (
   <div
     data-testid="form-actions"
     className={cn(
-      'flex flex-wrap items-center gap-3 rounded-lg border border-line bg-white/90 px-4 py-3 shadow-md backdrop-blur-sm',
+      'flex flex-wrap items-center gap-3 rounded-xl border border-line bg-white/90 px-4 py-3 shadow-lg backdrop-blur-sm',
       sticky && 'sticky bottom-4 z-10',
       className
     )}
@@ -311,7 +311,7 @@ export const ErrorBanner = ({ message, title, onClose, tone = 'danger', classNam
   return (
     <div
       role="alert"
-      className={cn('flex items-start gap-3 rounded-lg border px-4 py-3 text-sm', wrapper, className)}
+      className={cn('flex items-start gap-3 rounded-xl border px-4 py-3 text-sm', wrapper, className)}
     >
       <Icon className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
       <div className="min-w-0 flex-1">
@@ -323,7 +323,7 @@ export const ErrorBanner = ({ message, title, onClose, tone = 'danger', classNam
           type="button"
           onClick={onClose}
           aria-label="Cerrar aviso"
-          className="-mr-1 shrink-0 rounded p-1 transition-opacity hover:opacity-70"
+          className="focus-ring -mr-1 shrink-0 rounded-lg p-1 transition-opacity hover:opacity-70"
         >
           <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M4 4l8 8M12 4l-8 8" strokeLinecap="round" />

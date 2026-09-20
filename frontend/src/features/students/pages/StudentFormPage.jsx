@@ -285,10 +285,10 @@ const StudentFormPage = () => {
                   <FormControl fullWidth>
                     <InputLabel>{t('students.identificationType')}</InputLabel>
                     <Select name="identification_type" value={formData.identification_type || 'ID'} onChange={handleChange} label={t('students.identificationType')}>
-                      <MenuItem value="ID">ID</MenuItem>
-                      <MenuItem value="PASSPORT">Passport</MenuItem>
-                      <MenuItem value="BIRTH_CERTIFICATE">Birth Certificate</MenuItem>
-                      <MenuItem value="OTHER">Other</MenuItem>
+                      <MenuItem value="ID">{t('students.idTypeId')}</MenuItem>
+                      <MenuItem value="PASSPORT">{t('students.idTypePassport')}</MenuItem>
+                      <MenuItem value="BIRTH_CERTIFICATE">{t('students.idTypeBirthCertificate')}</MenuItem>
+                      <MenuItem value="OTHER">{t('students.idTypeOther')}</MenuItem>
                     </Select>
                   </FormControl>
                 </FormCol>

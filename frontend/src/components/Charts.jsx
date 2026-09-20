@@ -52,7 +52,7 @@ export const BarChart = ({
             <div key={d.label} className="flex h-full min-w-0 flex-1 flex-col items-center justify-end gap-1.5">
               <span className="text-2xs font-bold tabular-nums text-ink-soft">{valueFormatter(value)}</span>
               <div
-                className="w-full rounded-t-md bg-brand-gradient transition-[height] duration-500 ease-smooth"
+                className="w-full rounded-t-lg bg-brand-gradient transition-[height] duration-500 ease-smooth"
                 style={{ height: `${pct}%` }}
                 title={`${d.label}: ${valueFormatter(value)}`}
               />

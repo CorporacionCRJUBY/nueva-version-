@@ -71,14 +71,16 @@
   --gradient-accent: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
   --gradient-hero: linear-gradient(145deg, #2d1b69 0%, #4c1d95 50%, #6d28d9 100%);
 
-  --shadow-sm: 0 1px 2px rgba(30,27,75,0.05);
-  --shadow-md: 0 4px 12px rgba(30,27,75,0.08), 0 1px 3px rgba(30,27,75,0.04);
-  --shadow-lg: 0 12px 32px rgba(30,27,75,0.12), 0 2px 8px rgba(30,27,75,0.06);
+  --shadow-sm: 0 1px 3px rgba(30,27,75,0.06), 0 1px 2px rgba(30,27,75,0.04);
+  --shadow-md: 0 4px 16px rgba(30,27,75,0.07), 0 2px 6px rgba(30,27,75,0.04);
+  --shadow-lg: 0 12px 36px rgba(30,27,75,0.10), 0 4px 12px rgba(30,27,75,0.05);
+  --shadow-xl: 0 24px 64px rgba(30,27,75,0.16), 0 8px 20px rgba(30,27,75,0.07);
 
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 12px;
   --radius-xl: 16px;
+  --radius-2xl: 20px;
 
   --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -172,13 +174,21 @@
 @layer components {
   /* --- Superficies --- */
   .card {
-    @apply rounded-lg border border-line bg-surface shadow-sm;
+    @apply rounded-xl border border-line bg-surface shadow-sm;
   }
   .card-hover {
-    @apply transition-shadow duration-200 hover:shadow-md;
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md;
   }
   .panel {
-    @apply rounded-lg border border-line bg-surface;
+    @apply rounded-xl border border-line bg-surface;
+  }
+  /* Tarjeta con brillo sutil en la esquina (estilo Figma). */
+  .card-shine {
+    @apply relative overflow-hidden;
+  }
+  .card-shine::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 bg-card-shine;
   }
 
   /* --- Botones --- */
@@ -188,10 +198,11 @@
            disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-primary {
-    @apply bg-brand-600 text-white shadow-brand hover:bg-brand-700 active:bg-brand-800;
+    @apply bg-brand-600 text-white shadow-brand hover:bg-brand-700 hover:shadow-brand-lg
+           active:bg-brand-800 active:shadow-brand;
   }
   .btn-secondary {
-    @apply border border-line-strong bg-surface text-ink-soft hover:bg-hover hover:text-ink;
+    @apply border border-line-strong bg-surface text-ink-soft hover:border-brand-300 hover:bg-hover hover:text-ink;
   }
   .btn-ghost {
     @apply text-brand-700 hover:bg-brand-500/10;
@@ -208,16 +219,16 @@
 
   /* --- Campos de formulario --- */
   .field {
-    @apply w-full rounded-md border border-line bg-surface px-3 py-2 text-sm text-ink
-           transition-colors duration-150 placeholder:text-ink-muted
+    @apply w-full rounded-lg border border-line bg-surface px-3.5 py-2.5 text-sm text-ink
+           transition-all duration-150 placeholder:text-ink-muted
            hover:border-line-strong focus:border-brand-500 focus:outline-none
-           focus:ring-2 focus:ring-brand-500/20 disabled:cursor-not-allowed disabled:bg-canvas;
+           focus:ring-4 focus:ring-brand-500/[0.12] disabled:cursor-not-allowed disabled:bg-canvas;
   }
   .field-label {
     @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-soft;
   }
   .field-error {
-    @apply border-danger focus:border-danger focus:ring-danger/20;
+    @apply border-danger focus:border-danger focus:ring-danger/[0.15];
   }
   .field-helper {
     @apply mt-1 text-xs text-ink-muted;
@@ -225,14 +236,14 @@
 
   /* --- Tablas --- */
   .table-wrap {
-    @apply w-full overflow-hidden rounded-lg border border-line bg-surface shadow-sm;
+    @apply w-full overflow-hidden rounded-xl border border-line bg-surface shadow-sm;
   }
   .table-head-cell {
-    @apply border-b border-line bg-surface-2 px-4 py-3 text-left text-2xs
+    @apply border-b border-line bg-surface-2 px-4 py-3.5 text-left text-2xs
            font-semibold uppercase tracking-wider text-ink-muted;
   }
   .table-cell {
-    @apply border-b border-line-subtle px-4 py-3 text-sm text-ink;
+    @apply border-b border-line-subtle px-4 py-3.5 text-sm text-ink;
   }
   .table-row {
     @apply transition-colors duration-150;
@@ -244,7 +255,7 @@
   /* --- Chips / badges --- */
   /* Referencia: píldora completamente redondeada. */
   .chip {
-    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-2xs font-semibold;
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-2xs font-semibold;
   }
   .badge-dot {
     @apply inline-block h-2 w-2 shrink-0 rounded-full;
@@ -252,13 +263,13 @@
 
   /* --- Navegación lateral --- */
   .nav-item {
-    @apply mx-2 mb-0.5 flex w-[calc(100%-1rem)] items-center gap-3 rounded px-3 py-2.5 text-sm font-medium
+    @apply mx-2 mb-0.5 flex w-[calc(100%-1rem)] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium
            text-sidebar-item transition-all duration-200
            hover:bg-white/[0.07] hover:text-white;
   }
   .nav-item-active {
     /* Referencia: lavado violeta translúcido con texto lila claro y punto guía. */
-    @apply bg-brand-600/40 font-semibold text-brand-200 hover:bg-brand-600/45;
+    @apply bg-brand-600/40 font-semibold text-brand-200 shadow-inset hover:bg-brand-600/[0.45];
   }
   /* CONTRASTE (2026-09-19): las etiquetas de grupo a `white/60` sobre el
      violeta profundo quedaban por debajo del ratio legible en un monitor
@@ -284,8 +295,8 @@
   /* Referencia: tarjeta blanca con borde lavanda, radio contenido, sin franja
      superior de color (la identidad la da el mosaico del icono). */
   .stat-card {
-    @apply relative overflow-hidden rounded-lg border border-line bg-surface p-5 shadow-sm
-           transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md;
+    @apply relative overflow-hidden rounded-xl border border-line bg-surface p-5 shadow-sm
+           transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md;
   }
 
   /* --- Diálogos --- */
@@ -293,7 +304,7 @@
     @apply fixed inset-0 z-modal flex items-center justify-center bg-navy-950/60 p-4 backdrop-blur-sm;
   }
   .modal-panel {
-    @apply w-full max-w-lg animate-scale-in rounded-lg border border-line bg-surface shadow-xl;
+    @apply w-full max-w-lg animate-scale-in rounded-2xl border border-line bg-surface shadow-xl;
   }
 
   /* --- Estados vacíos --- */
@@ -320,6 +331,14 @@
   }
   .text-balance {
     text-wrap: balance;
+  }
+  /* Anillo de foco accesible reutilizable (estilo Figma). */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/25;
+  }
+  /* Elevación al pasar el cursor, coherente en toda la app. */
+  .lift {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md;
   }
   .scrollbar-thin {
     scrollbar-width: thin;

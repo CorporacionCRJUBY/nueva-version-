@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { Plus as AddIcon, Zap as QuickIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import PermissionGate from './PermissionGate';
 import QuickCreateDrawer from './QuickCreateDrawer';
 import { sx } from '../ui/sx';

@@ -65,6 +65,8 @@
     "documentsGroup": "Documents",
     "administrationGroup": "Administration",
     "systemGroup": "System",
-    "collapse": "Collapse"
+    "collapse": "Collapse",
+    "studentRecords": "Student Records",
+    "institution": "Institution"
   }
 }

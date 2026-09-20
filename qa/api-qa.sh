@@ -19,7 +19,7 @@
 # =============================================================================
 set -uo pipefail
 
-BASE="${1:-http://localhost:5000}"
+BASE="${1:-http://localhost:5050}"
 # Ruta RELATIVA al propio script: una ruta absoluta hardcodeada (antes
 # "/workspace/academix_v5/qa/...") rompía la suite en cualquier otro clon.
 OUT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/api-qa-results.txt"

@@ -144,7 +144,7 @@ seeds en el primer arranque (`RUN_MIGRATIONS` / `RUN_SEEDS`).
 ### Desarrollo local (sin Docker)
 
 ```bash
-# Backend  → http://localhost:5000   (usa el MySQL nativo en 127.0.0.1)
+# Backend  → http://localhost:5050   (usa el MySQL nativo en 127.0.0.1)
 cd backend && cp .env.example .env   # editar DB_PASSWORD y los secretos
 npm install && npm run migrate && npm run seed && npm start
 
@@ -160,7 +160,7 @@ npm install && npm run dev
 ```bash
 cd backend  && npm test                       # 25 pruebas (2 omitidas sin BD local)
 cd frontend && npx vitest run                 # 6 pruebas
-bash qa/api-qa.sh http://localhost:5000       # 79 comprobaciones de la API
+bash qa/api-qa.sh http://localhost:5050       # 79 comprobaciones de la API
 ```
 
 ---

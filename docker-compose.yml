@@ -63,12 +63,12 @@ services:
       # (Docker Desktop para macOS/Windows ya lo resuelve por su cuenta).
       - 'host.docker.internal:host-gateway'
     ports:
-      - '5000:5000'
+      - '5050:5050'
     volumes:
       - uploads_data:/app/uploads
       - seed_data:/data
     healthcheck:
-      test: ['CMD', 'wget', '-qO-', 'http://localhost:5000/health/ready']
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:5050/health/ready']
       interval: 15s
       timeout: 5s
       retries: 5

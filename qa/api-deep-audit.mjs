@@ -14,7 +14,7 @@
  */
 import fs from 'node:fs';
 
-const BASE = process.argv[2] || 'http://localhost:5000';
+const BASE = process.argv[2] || 'http://localhost:5050';
 const REPORT = process.env.QA_REPORT || '/tmp/api-deep-audit.txt';
 
 const results = [];

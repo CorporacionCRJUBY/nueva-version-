@@ -84,7 +84,7 @@ EOF
 cat > "$ROOT/backend/.env" <<EOF
 # GENERADO por scripts/init-secrets.sh — NO versionar.
 NODE_ENV=development
-PORT=5000
+PORT=5050
 HOST=0.0.0.0
 LOG_LEVEL=info
 
@@ -119,13 +119,99 @@ TRUST_PROXY=0
 SEED_ALLOW_IN_PRODUCTION=$SEED_ALLOW_IN_PRODUCTION
 EOF
 
-chmod 600 "$ROOT/.env" "$ROOT/backend/.env"
+# --- Ficheros por entorno (desarrollo / test / producción) -------------------
+# `backend/src/config/env.js` carga el fichero según NODE_ENV:
+#   development -> .env   |   test -> .env.test   |   production -> .env.production
+# Generamos los tres para que NINGÚN entorno arranque con secretos vacíos.
+cat > "$ROOT/backend/.env.development" <<EOF
+# GENERADO por scripts/init-secrets.sh — NO versionar.
+NODE_ENV=development
+PORT=5050
+HOST=0.0.0.0
+LOG_LEVEL=debug
+
+DB_HOST=127.0.0.1
+DB_PORT=$DB_PORT
+DB_USER=$DB_USER
+DB_PASSWORD=$DB_PASSWORD
+DB_NAME=$DB_NAME
+DB_POOL_MIN=2
+DB_POOL_MAX=10
+
+JWT_SECRET=$JWT_SECRET
+JWT_REFRESH_SECRET=$JWT_REFRESH_SECRET
+ENCRYPTION_KEY=$ENCRYPTION_KEY
+JWT_EXPIRES_IN=15m
+JWT_REFRESH_EXPIRES_IN=7d
+
+COOKIE_SECURE=false
+CORS_ORIGIN=$CORS_ORIGIN
+TRUST_PROXY=0
+SEED_ALLOW_IN_PRODUCTION=$SEED_ALLOW_IN_PRODUCTION
+EOF
+
+cat > "$ROOT/backend/.env.test" <<EOF
+# GENERADO por scripts/init-secrets.sh — NO versionar.
+NODE_ENV=test
+PORT=5050
+HOST=0.0.0.0
+LOG_LEVEL=error
+
+DB_HOST=127.0.0.1
+DB_PORT=$DB_PORT
+DB_USER=$DB_USER
+DB_PASSWORD=$DB_PASSWORD
+DB_NAME=$DB_NAME
+DB_POOL_MIN=1
+DB_POOL_MAX=5
+
+JWT_SECRET=$JWT_SECRET
+JWT_REFRESH_SECRET=$JWT_REFRESH_SECRET
+ENCRYPTION_KEY=$ENCRYPTION_KEY
+JWT_EXPIRES_IN=15m
+JWT_REFRESH_EXPIRES_IN=7d
+
+COOKIE_SECURE=false
+CORS_ORIGIN=$CORS_ORIGIN
+TRUST_PROXY=0
+SEED_ALLOW_IN_PRODUCTION=false
+EOF
+
+cat > "$ROOT/backend/.env.production" <<EOF
+# GENERADO por scripts/init-secrets.sh — NO versionar.
+NODE_ENV=production
+PORT=5050
+HOST=0.0.0.0
+
+DB_HOST=127.0.0.1
+DB_PORT=$DB_PORT
+DB_USER=$DB_USER
+DB_PASSWORD=$DB_PASSWORD
+DB_NAME=$DB_NAME
+
+JWT_SECRET=$JWT_SECRET
+JWT_REFRESH_SECRET=$JWT_REFRESH_SECRET
+ENCRYPTION_KEY=$ENCRYPTION_KEY
+JWT_EXPIRES_IN=15m
+JWT_REFRESH_EXPIRES_IN=7d
+
+CORS_ORIGIN=$CORS_ORIGIN
+COOKIE_SECURE=$COOKIE_SECURE
+TRUST_PROXY=1
+SEED_ALLOW_IN_PRODUCTION=false
+EOF
+
+chmod 600 "$ROOT/.env" "$ROOT/backend/.env" \
+  "$ROOT/backend/.env.development" "$ROOT/backend/.env.test" "$ROOT/backend/.env.production"
 
 cat <<EOF
 
 Listo. Archivos generados (permisos 600, ignorados por git):
   .env
   backend/.env
+  backend/.env.development
+  backend/.env.test
+  backend/.env.production
 
 Contraseña de la BD nativa: $DB_PASSWORD
   ⚠️  Úsala en database/init/01-init.sql y vuelve a ejecutarlo, o crea el

@@ -65,6 +65,8 @@
     "documentsGroup": "Documentos",
     "administrationGroup": "Administración",
     "systemGroup": "Sistema",
-    "collapse": "Contraer"
+    "collapse": "Contraer",
+    "studentRecords": "Expedientes de Estudiantes",
+    "institution": "Institución"
   }
 }

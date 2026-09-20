@@ -20,8 +20,6 @@ import {
   Building2,
   Award,
   Star,
-  ChevronUp,
-  ChevronDown,
   FolderOpen,
   HeartPulse,
   ClipboardCheck,
@@ -128,21 +126,10 @@ const MainLayout = () => {
     if (!isDesktopViewport()) setDrawerOpen(false);
   };
 
-  const [openSections, setOpenSections] = useState({
-    students: true,
-    teachers: false,
-    attendance: true,
-    grades: false,
-    reports: false,
-    graduation: false,
-    admin: false,
-  });
 
   const userMenuRef = useClickOutside(() => setUserMenuOpen(false));
   const langMenuRef = useClickOutside(() => setLangMenuOpen(false));
 
-  const toggleSection = (section) =>
-    setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));
 
   const isAdmin = user?.roles?.includes('SUPER_ADMIN') || user?.roles?.includes('ADMIN');
   const canViewSystem = isAdmin || user?.permissions?.includes('system.view');
@@ -192,7 +179,17 @@ const MainLayout = () => {
       { to: '/gransif', label: t('gransif.title') || 'GRANSIF', icon: Award },
       { to: '/branches', label: t('branches.title') || 'Branches', icon: Building2 },
       { to: '/calendar', label: t('calendar.title') || 'School Calendar', icon: CalendarDays },
-      { to: '/settings', label: t('settings.title') || 'Settings', icon: Settings },
+      { to: '/users', label: t('admin.menu.users') || 'Users', icon: ShieldCheck },
+      { to: '/roles', label: t('admin.menu.roles') || 'Roles', icon: ShieldCheck },
+      { to: '/permissions', label: t('admin.menu.permissions') || 'Permissions', icon: ShieldCheck },
+      { to: '/academic-years', label: t('admin.menu.academicYears') || 'Academic Years', icon: CalendarDays },
+      { to: '/academic-periods', label: t('admin.menu.academicPeriods') || 'Academic Periods', icon: CalendarDays },
+      { to: '/credits', label: t('admin.menu.creditsManagement') || 'Credits', icon: GraduationCap },
+      { to: '/gpa', label: t('admin.menu.gpaCalculation') || 'GPA', icon: GraduationCap },
+      { to: '/audit', label: t('admin.menu.auditLogs') || 'Audit Logs', icon: History },
+      { to: '/activity', label: t('admin.menu.activityFeed') || 'Activity', icon: Activity },
+      { to: '/settings', label: t('admin.menu.systemSettings') || 'Settings', icon: Settings },
+      { to: '/server-control', label: t('admin.menu.serverControl') || 'Server Control', icon: Activity },
     ],
     [t]
   );
@@ -259,59 +256,6 @@ const MainLayout = () => {
     );
   };
 
-  /** Enlace secundario (dentro de un acordeón). */
-  const SubLink = ({ to, label, active }) => (
-    <button
-      type="button"
-      onClick={() => goTo(to)}
-      className={cn(
-        'mx-2 mb-0.5 flex w-[calc(100%-1rem)] items-center rounded py-2 pl-10 pr-3 text-left text-sm',
-        'text-sidebar-item transition-colors duration-200 hover:bg-white/[0.06] hover:text-white',
-        (active ?? isSelected(to)) && 'bg-brand-600/25 font-semibold text-white'
-      )}
-    >
-      <span className="truncate">{label}</span>
-    </button>
-  );
-
-  /**
-   * Cabecera de sección desplegable.
-   *
-   * CORRECCIÓN (2026-09-19): la cabecera no decía qué contenía cuando el
-   * acordeón estaba PLEGADO, así que un grupo como «Gestión académica»
-   * parecía una sección vacía sin nada dentro. Ahora anuncia cuántos destinos
-   * contiene (`· 6`) mientras está cerrada, y deja de mostrarlo al abrirse,
-   * cuando los elementos ya son visibles.
-   */
-  const SectionHeader = ({ section, icon: Icon, label, count = 0 }) => {
-    const isOpen = !!openSections[section];
-    return (
-      <button
-        type="button"
-        onClick={() => toggleSection(section)}
-        className="nav-item"
-        title={drawerOpen ? undefined : label}
-        aria-expanded={isOpen}
-      >
-        <Icon className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
-        {drawerOpen && (
-          <>
-            <span className="min-w-0 flex-1 truncate text-left">
-              {label}
-              {!isOpen && count > 0 && (
-                <span className="ml-1.5 text-2xs font-normal text-white/45">
-                  ·&nbsp;{count}
-                </span>
-              )}
-            </span>
-            {isOpen ? <ChevronUp className="h-4 w-4 shrink-0" /> : <ChevronDown className="h-4 w-4 shrink-0" />}
-          </>
-        )}
-      </button>
-    );
-  };
-
-  const sectionVisible = (key) => drawerOpen && openSections[key];
 
   return (
     <div className="flex min-h-screen">
@@ -601,78 +545,60 @@ const MainLayout = () => {
           <NavGroupLabel open={drawerOpen}>
             {t('common.academicManagement') || 'Academic Management'}
           </NavGroupLabel>
+          <NavLink to="/students" icon={Users} label={t('admin.menu.studentsList')} />
+          <NavLink to="/guardians" icon={Users} label={t('admin.menu.guardians')} />
+          <NavLink to="/teachers" icon={School} label={t('admin.menu.teachersList')} />
+          <NavLink to="/subjects" icon={FileText} label={t('admin.menu.subjects')} />
+          <NavLink to="/assignments" icon={ClipboardCheck} label={t('admin.menu.myAssignments')} />
 
-          <SectionHeader section="students" icon={Users} label={t('students.title') || 'Students'} count={6} />
-          {sectionVisible('students') && (
-            <div className="animate-fade-in">
-              <SubLink to="/students" label={t('admin.menu.studentsList')} />
-              <SubLink to="/guardians" label={t('admin.menu.guardians')} />
-              <SubLink to="/documents" label={t('admin.menu.documents')} />
-              <SubLink to="/medical-records" label={t('admin.menu.medicalRecords')} />
-              <SubLink to="/academic-history" label={t('admin.menu.academicHistory')} />
-              <SubLink to="/previous-schools" label={t('admin.menu.previousSchools')} />
-            </div>
-          )}
-
-          <SectionHeader section="teachers" icon={School} label={t('teachers.title') || 'Teachers'} count={4} />
-          {sectionVisible('teachers') && (
-            <div className="animate-fade-in">
-              <SubLink to="/teachers" label={t('admin.menu.teachersList')} />
-              <SubLink to="/assignments" label={t('admin.menu.myAssignments')} />
-              <SubLink to="/assignments/my-groups" label={t('admin.menu.myGroups')} />
-              <SubLink to="/subjects" label={t('admin.menu.subjects')} />
-            </div>
-          )}
+          <div className="mx-3 my-2 border-t border-white/[0.08]" />
 
           {/* ---------------- Tracking ---------------- */}
           <NavGroupLabel open={drawerOpen}>{t('common.tracking') || 'Tracking'}</NavGroupLabel>
+          <NavLink to="/attendance" icon={CalendarCheck} label={t('admin.menu.dailyAttendance')} />
+          <NavLink
+            to="/attendance/monthly"
+            icon={CalendarCheck}
+            label={t('admin.menu.monthlyGrid')}
+            active={location.pathname.startsWith('/attendance/monthly')}
+          />
+          <NavLink to="/grades" icon={GraduationCap} label={t('admin.menu.gradebook')} />
+          <NavLink to="/grade-change-requests" icon={GraduationCap} label={t('admin.menu.gradeChangeRequests')} />
 
-          <SectionHeader section="attendance" icon={CalendarCheck} label={t('attendance.title') || 'Attendance'} count={2} />
-          {sectionVisible('attendance') && (
-            <div className="animate-fade-in">
-              <SubLink to="/attendance" label={t('admin.menu.dailyAttendance')} />
-              <SubLink
-                to="/attendance/monthly"
-                label={t('admin.menu.monthlyGrid')}
-                active={location.pathname.startsWith('/attendance/monthly')}
-              />
-            </div>
-          )}
+          <div className="mx-3 my-2 border-t border-white/[0.08]" />
 
-          <SectionHeader section="grades" icon={GraduationCap} label={t('grades.title') || 'Grades'} count={5} />
-          {sectionVisible('grades') && (
-            <div className="animate-fade-in">
-              <SubLink to="/grades" label={t('admin.menu.gradebook')} />
-              <SubLink to="/academic-periods" label={t('admin.menu.academicPeriods')} />
-              <SubLink to="/grade-change-requests" label={t('admin.menu.gradeChangeRequests')} />
-              <SubLink to="/credits" label={t('admin.menu.creditsManagement')} />
-              <SubLink to="/gpa" label={t('admin.menu.gpaCalculation')} />
-            </div>
-          )}
-
+          {/* ---------------- Student Records ---------------- */}
+          <NavGroupLabel open={drawerOpen}>
+            {t('common.studentRecords') || 'Student Records'}
+          </NavGroupLabel>
+          <NavLink to="/academic-history" icon={History} label={t('admin.menu.academicHistory')} />
+          <NavLink to="/previous-schools" icon={School} label={t('admin.menu.previousSchools')} />
+          <NavLink to="/medical-records" icon={HeartPulse} label={t('admin.menu.medicalRecords')} />
+          <NavLink to="/documents" icon={FolderOpen} label={t('admin.menu.documents')} />
           <NavLink to="/scholarships" icon={Star} label={t('scholarships.title') || 'Scholarships'} />
 
-          {/* ---------------- Documents ---------------- */}
-          <NavGroupLabel open={drawerOpen}>{t('common.documentsGroup') || 'Documents'}</NavGroupLabel>
+          <div className="mx-3 my-2 border-t border-white/[0.08]" />
 
-          <SectionHeader section="reports" icon={FileText} label={t('admin.menu.reportCenter')} count={4} />
-          {sectionVisible('reports') && (
-            <div className="animate-fade-in">
-              <SubLink to="/reports" label={t('admin.menu.allReports')} />
-              <SubLink to="/progress-reports" label={t('admin.menu.progressReports')} />
-              <SubLink to="/report-cards" label={t('admin.menu.reportCards')} />
-              <SubLink to="/transcripts" label={t('admin.menu.officialTranscripts')} />
-            </div>
-          )}
+          {/* ---------------- Reports & Documents ---------------- */}
+          <NavGroupLabel open={drawerOpen}>
+            {t('common.documentsGroup') || 'Reports & Documents'}
+          </NavGroupLabel>
+          <NavLink to="/reports" icon={FileText} label={t('admin.menu.allReports')} />
+          <NavLink to="/progress-reports" icon={FileText} label={t('admin.menu.progressReports')} />
+          <NavLink to="/report-cards" icon={FileText} label={t('admin.menu.reportCards')} />
+          <NavLink to="/transcripts" icon={FileText} label={t('admin.menu.officialTranscripts')} />
 
-          <SectionHeader section="graduation" icon={Award} label={t('graduation.title') || 'Graduation'} count={2} />
-          {sectionVisible('graduation') && (
-            <div className="animate-fade-in">
-              <SubLink to="/graduation" label={t('admin.menu.graduationCenter')} />
-              <SubLink to="/gransif" label={t('admin.menu.gransif')} />
-            </div>
-          )}
+          <div className="mx-3 my-2 border-t border-white/[0.08]" />
 
+          {/* ---------------- Graduation ---------------- */}
+          <NavGroupLabel open={drawerOpen}>{t('graduation.title') || 'Graduation'}</NavGroupLabel>
+          <NavLink to="/graduation" icon={Award} label={t('admin.menu.graduationCenter')} />
+          <NavLink to="/gransif" icon={Award} label={t('admin.menu.gransif')} />
+
+          <div className="mx-3 my-2 border-t border-white/[0.08]" />
+
+          {/* ---------------- Institution ---------------- */}
+          <NavGroupLabel open={drawerOpen}>{t('common.institution') || 'Institution'}</NavGroupLabel>
           <NavLink to="/branches" icon={Building2} label={t('branches.title') || 'Branches'} />
           <NavLink to="/calendar" icon={CalendarDays} label={t('calendar.title') || 'School Calendar'} />
 
@@ -683,19 +609,16 @@ const MainLayout = () => {
               <NavGroupLabel open={drawerOpen}>
                 {t('common.administrationGroup') || 'Administration'}
               </NavGroupLabel>
-
-              <SectionHeader section="admin" icon={ShieldCheck} label={t('admin.menu.administration')} count={7} />
-              {sectionVisible('admin') && (
-                <div className="animate-fade-in">
-                  <SubLink to="/users" label={t('admin.menu.users')} />
-                  <SubLink to="/roles" label={t('admin.menu.roles')} />
-                  <SubLink to="/permissions" label={t('admin.menu.permissions')} />
-                  <SubLink to="/academic-years" label={t('admin.menu.academicYears')} />
-                  <SubLink to="/audit" label={t('admin.menu.auditLogs')} />
-                  <SubLink to="/activity" label={t('admin.menu.activityFeed')} />
-                  <SubLink to="/settings" label={t('admin.menu.systemSettings')} />
-                </div>
-              )}
+              <NavLink to="/users" icon={ShieldCheck} label={t('admin.menu.users')} />
+              <NavLink to="/roles" icon={ShieldCheck} label={t('admin.menu.roles')} />
+              <NavLink to="/permissions" icon={ShieldCheck} label={t('admin.menu.permissions')} />
+              <NavLink to="/academic-years" icon={CalendarDays} label={t('admin.menu.academicYears')} />
+              <NavLink to="/academic-periods" icon={CalendarDays} label={t('admin.menu.academicPeriods')} />
+              <NavLink to="/credits" icon={GraduationCap} label={t('admin.menu.creditsManagement')} />
+              <NavLink to="/gpa" icon={GraduationCap} label={t('admin.menu.gpaCalculation')} />
+              <NavLink to="/audit" icon={History} label={t('admin.menu.auditLogs')} />
+              <NavLink to="/activity" icon={Activity} label={t('admin.menu.activityFeed')} />
+              <NavLink to="/settings" icon={Settings} label={t('admin.menu.systemSettings')} />
             </>
           )}
 

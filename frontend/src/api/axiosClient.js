@@ -5,7 +5,7 @@ import axios from 'axios';
 // FIX (auditoria hallazgo B2): el fallback local debe incluir el prefijo
 // `/api`, igual que el VITE_API_URL del .env — antes apuntaba a la raíz del
 // servidor y ninguna ruta de la API habría resuelto sin la variable de entorno.
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5050/api';
 
 // FIX (auditoria hallazgo medio #2 - JWT en localStorage): el token ya no
 // se lee de localStorage ni se manda a mano como header Authorization —

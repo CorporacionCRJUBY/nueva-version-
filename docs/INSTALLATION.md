@@ -67,7 +67,7 @@ Valores mínimos en `backend/.env`:
 
 ```env
 NODE_ENV=development
-PORT=5000
+PORT=5050
 
 # Base de datos NATIVA
 DB_HOST=127.0.0.1          # en Docker: host.docker.internal
@@ -125,7 +125,7 @@ npm run seed        # 14 seeds (datos de demostración incluidos)
 ### Desarrollo local (sin Docker)
 
 ```bash
-# Backend  -> http://localhost:5000
+# Backend  -> http://localhost:5050
 cd backend && npm run dev
 
 # Frontend -> http://localhost:5173   (otra terminal)
@@ -142,8 +142,8 @@ docker compose ps
 | Servicio | URL |
 |---|---|
 | Frontend | http://localhost:8080 |
-| API | http://localhost:5000/api |
-| Health | http://localhost:5000/health/ready |
+| API | http://localhost:5050/api |
+| Health | http://localhost:5050/health/ready |
 | Base de datos | `localhost:3306` (MySQL **nativo** del anfitrión) |
 
 El backend espera a la base nativa, ejecuta las migraciones y siembra **solo la
@@ -161,5 +161,5 @@ primera vez** (marcador `/data/.seeded` en el volumen `seed_data`).
 ```bash
 cd backend  && npm test                  # 25 pruebas
 cd frontend && npx vitest run            # 6 pruebas
-bash qa/api-qa.sh http://localhost:5000  # 79 comprobaciones de la API
+bash qa/api-qa.sh http://localhost:5050  # 79 comprobaciones de la API
 ```

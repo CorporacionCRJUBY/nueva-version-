@@ -259,7 +259,7 @@ docker compose up --build -d
 # 3. Verificar
 docker compose ps                          # backend y frontend deben estar "healthy"
 curl http://localhost:8080/healthz         # frontend
-curl http://localhost:5000/health/ready    # backend + BD nativa
+curl http://localhost:5050/health/ready    # backend + BD nativa
 ```
 
 Aplicación en **http://localhost:8080**.
@@ -288,7 +288,7 @@ funcionar de forma insegura.
 # Backend
 cd backend && npm install
 npm run migrate && npm run seed
-npm start                      # http://localhost:5000
+npm start                      # http://localhost:5050
 
 # Frontend
 cd frontend && npm install
@@ -302,7 +302,7 @@ npm run dev                    # http://localhost:5173 (proxy /api al backend)
 ```bash
 cd backend  && npm test            # 25 tests (2 omitidos sin BD local)
 cd frontend && npx vitest run      # 6 tests
-bash qa/api-qa.sh http://localhost:5000   # 79 comprobaciones de API
+bash qa/api-qa.sh http://localhost:5050   # 79 comprobaciones de API
 ```
 
 Resultados detallados en `docs/QA_REPORT.md`.

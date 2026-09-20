@@ -13,12 +13,15 @@ const envFile = nodeEnv === 'production'
 
 const basePath = path.resolve(process.cwd(), envFile);
 
+// Cargamos SIEMPRE el fichero de entorno correspondiente (desarrollo, test o
+// producción). `dotenv` NO sobreescribe variables ya presentes en el proceso,
+// de modo que las variables inyectadas por el orquestador/CI (Docker, systemd,
+// GitHub Actions, etc.) tienen prioridad sobre el fichero. Si el fichero no
+// existe simplemente se ignora y se usan las variables del proceso.
 try {
-  if (nodeEnv !== 'production' && nodeEnv !== 'test') {
-    dotenv.config({ path: basePath });
-  }
+  dotenv.config({ path: basePath });
 } catch (error) {
-  // ignore missing env files in non-critical environments
+  // ignore missing env files; the process environment is used instead
 }
 
 const toBool = (value, fallback = false) => {

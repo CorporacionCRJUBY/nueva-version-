@@ -206,8 +206,8 @@ docker compose up --build -d
 | Servicio | URL |
 |---|---|
 | Frontend | http://localhost:8080 |
-| API | http://localhost:5000/api |
-| Health | http://localhost:5000/health/ready |
+| API | http://localhost:5050/api |
+| Health | http://localhost:5050/health/ready |
 | Base de datos | `localhost:3306` |
 
 El backend espera a que la base esté sana, ejecuta migraciones y siembra **solo
@@ -229,11 +229,11 @@ cp .env.example .env        # ajusta DB_*, JWT_*, ENCRYPTION_KEY
 npm install
 npm run migrate             # 60 migraciones
 npm run seed                # 12 seeds
-npm run dev                 # http://localhost:5000
+npm run dev                 # http://localhost:5050
 
 # Frontend (otra terminal)
 cd frontend
-cp .env.example .env        # VITE_API_URL=http://localhost:5000/api
+cp .env.example .env        # VITE_API_URL=http://localhost:5050/api
 npm install
 npm run dev                 # http://localhost:5173
 ```
@@ -278,7 +278,7 @@ npm run dev                 # http://localhost:5173
 
 | Variable | Descripción | Ejemplo |
 |---|---|---|
-| `VITE_API_URL` | URL base de la API | `/api` (Docker) · `http://localhost:5000/api` (local) |
+| `VITE_API_URL` | URL base de la API | `/api` (Docker) · `http://localhost:5050/api` (local) |
 
 ---
 
@@ -617,8 +617,8 @@ npm test
 Con el backend en ejecución:
 
 ```bash
-bash qa/api-qa.sh                       # contra http://localhost:5000
-bash qa/api-qa.sh http://otro-host:5000 # contra otro entorno
+bash qa/api-qa.sh                       # contra http://localhost:5050
+bash qa/api-qa.sh http://otro-host:5050 # contra otro entorno
 ```
 
 Cubre 11 áreas: salud, autenticación (incluidas cookies `httpOnly` y JWT
